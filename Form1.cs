@@ -33,14 +33,15 @@ namespace Group1_POS
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (GeneralFun.EmptytextBox(txtRole) == true)
+            if (GeneralFun.EmptytextBox(txtRole,txtUserName) == true)
             {
                 return;
             }
             role = new Role();
             role.RoleName = txtRole.Text.Trim();
+            role.UserName = txtUserName.Text.Trim();
             role.createRole();
-            GeneralFun.ClearTextBox(txtRole);
+            GeneralFun.ClearTextBox(txtRole, txtUserName);
             txtRole.Focus();
         }
 

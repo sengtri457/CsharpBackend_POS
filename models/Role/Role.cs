@@ -15,14 +15,16 @@ namespace Group1_POS.models.Role
         public int Id { set; get; }
         private string _sql;
         private int _Rowffecticted;
+        public string UserName { set; get; }
         public string RoleName { set; get; }
         public bool IsDubplicateCheck()
         {
             try
             {
-                this._sql = "select * from tblrRole where RoleName= @RoleName";
+                this._sql = "select * from tblrRole where RoleName= @RoleName OR UserName=@UserName" ;
                 Database.cmd = new SqlCommand(this._sql, Database.con);
                 Database.cmd.Parameters.AddWithValue("@RoleName", this.RoleName);
+                Database.cmd.Parameters.AddWithValue("@UserName", this.UserName);
                 Database.cmd.ExecuteNonQuery();
                 Database.ads = new SqlDataAdapter(Database.cmd);
                 Database.tbl = new DataTable();
@@ -49,9 +51,10 @@ namespace Group1_POS.models.Role
                 {
                     return;
                 }
-                this._sql = "insert into tblrRole(RoleName)Values(@RoleName)";
+                this._sql = "insert into tblrRole(RoleName,UserName)Values(@RoleName,@UserName)";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
                 Database.cmd.Parameters.AddWithValue("@RoleName", this.RoleName);
+                Database.cmd.Parameters.AddWithValue("@UserName", this.UserName);
                 this._Rowffecticted= Database.cmd.ExecuteNonQuery();
                 if(this._Rowffecticted > 0)
                 {

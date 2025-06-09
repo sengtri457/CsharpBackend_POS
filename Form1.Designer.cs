@@ -40,6 +40,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchby = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.InputFeild.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -47,7 +49,9 @@
             // 
             // InputFeild
             // 
+            this.InputFeild.Controls.Add(this.txtUserName);
             this.InputFeild.Controls.Add(this.txtRole);
+            this.InputFeild.Controls.Add(this.label1);
             this.InputFeild.Controls.Add(this.RoleName);
             this.InputFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputFeild.Location = new System.Drawing.Point(16, 21);
@@ -171,6 +175,22 @@
             this.searchby.TabIndex = 0;
             this.searchby.Text = "Search By";
             // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(192, 120);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(263, 35);
+            this.txtUserName.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 126);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 29);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "UserName";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -208,6 +228,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label label1;
     }
 }
 
