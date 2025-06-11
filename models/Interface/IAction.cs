@@ -12,5 +12,6 @@ namespace Group1_POS.models.Interface
         void update(DataGridView dg);
         void deleted(DataGridView dg);
         void getDataGrid(DataGridView dg);
+        void SearchData(DataGridView dg);
     }
 }

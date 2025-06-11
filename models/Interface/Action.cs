@@ -25,6 +25,11 @@ namespace Group1_POS.models.Interface
             throw new NotImplementedException();
         }
 
+        public virtual void SearchData(DataGridView dg)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual void update(DataGridView dg)
         {
             throw new NotImplementedException();
