@@ -126,5 +126,12 @@ namespace Group1_POS.Views
             main.Show();
             this.Hide();
         }
+
+        private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           UserForm userForm = new UserForm();
+            userForm.MdiParent = this;
+            userForm.Show();
+        }
     }
 }

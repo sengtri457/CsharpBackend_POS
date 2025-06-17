@@ -13,10 +13,9 @@ namespace Group1_POS.models.Role
     internal class Role : MyAction
     {
         public int Id { set; get; }
+        public string RoleName { set; get; }
         private string _sql;
         private int _Rowffecticted;
-        public string UserName { set; get; }
-        public string RoleName { set; get; }
         public bool IsDubplicateCheck()
         {
             try

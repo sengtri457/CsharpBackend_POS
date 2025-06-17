@@ -61,7 +61,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Location = new System.Drawing.Point(23, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(486, 737);
+            this.panel1.Size = new System.Drawing.Size(486, 765);
             this.panel1.TabIndex = 0;
             // 
             // btnDelete
@@ -170,7 +170,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel2.Location = new System.Drawing.Point(512, 26);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(527, 737);
+            this.panel2.Size = new System.Drawing.Size(711, 775);
             this.panel2.TabIndex = 7;
             // 
             // dgRole
@@ -185,14 +185,14 @@
             this.Column2});
             this.dgRole.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgRole.GridColor = System.Drawing.Color.Black;
-            this.dgRole.Location = new System.Drawing.Point(0, 163);
+            this.dgRole.Location = new System.Drawing.Point(0, 166);
             this.dgRole.MultiSelect = false;
             this.dgRole.Name = "dgRole";
             this.dgRole.ReadOnly = true;
             this.dgRole.RowHeadersWidth = 62;
             this.dgRole.RowTemplate.Height = 28;
             this.dgRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgRole.Size = new System.Drawing.Size(527, 574);
+            this.dgRole.Size = new System.Drawing.Size(711, 609);
             this.dgRole.TabIndex = 3;
             this.dgRole.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRole_CellDoubleClick);
             // 
@@ -214,7 +214,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(172, 104);
+            this.txtSearch.Location = new System.Drawing.Point(193, 102);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(355, 43);
             this.txtSearch.TabIndex = 2;
@@ -224,7 +224,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(5, 106);
+            this.label1.Location = new System.Drawing.Point(26, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 42);
             this.label1.TabIndex = 1;
@@ -246,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1062, 785);
+            this.ClientSize = new System.Drawing.Size(1226, 785);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
