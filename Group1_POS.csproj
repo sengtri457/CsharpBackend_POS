@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="models\Method\HandleLogic.cs" />
+    <Compile Include="models\Product\Product.cs" />
     <Compile Include="models\User\User.cs" />
     <Compile Include="Views\DashBoard.cs">
       <SubType>Form</SubType>
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Product\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Product\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Userform.cs">
       <SubType>Form</SubType>
@@ -94,6 +101,9 @@
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Product\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Userform.resx">
       <DependentUpon>Userform.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +123,34 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\account-avatar-profile-user-11-svgrepo-com.png" />
+    <Content Include="Resources\Barcode-amico.png" />
+    <Content Include="Resources\Barcode-bro.png" />
+    <Content Include="Resources\carbon--collapse-categories.png" />
+    <Content Include="Resources\carbon--scis-transparent-supply.png" />
+    <Content Include="Resources\carbon--user-role.png" />
+    <Content Include="Resources\Checklist-pana.png" />
+    <Content Include="Resources\close-button-svgrepo-com.png" />
+    <Content Include="Resources\Computer login-rafiki.png" />
+    <Content Include="Resources\eos-icons--role-binding-outlined.png" />
+    <Content Include="Resources\fluent--home-24-regular %281%29.png" />
+    <Content Include="Resources\ix--product.png" />
+    <Content Include="Resources\mdi--cart-sale.png" />
+    <Content Include="Resources\mdi--logout.png" />
+    <Content Include="Resources\Novelist writing-bro.png" />
+    <Content Include="Resources\padnote-check-box-svgrepo-com.png" />
+    <Content Include="Resources\qlementine-icons--user-16.png" />
+    <Content Include="Resources\shopping-svgrepo-com %281%29.png" />
+    <Content Include="Resources\shopping-svgrepo-com.png" />
+    <Content Include="Resources\stock-svgrepo-com.png" />
+    <Content Include="Resources\Taking notes-rafiki.png" />
+    <Content Include="Resources\uil--setting.png" />
+    <Content Include="Resources\user-people-svgrepo-com.png" />
+    <Content Include="Resources\vaadin--stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\UserRole\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,284 +30,383 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roleManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printPreviewToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1UserRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.menuStrip.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            this.statusStrip.SuspendLayout();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.UserBtn = new System.Windows.Forms.Button();
+            this.UserRoleBtn = new System.Windows.Forms.Button();
+            this.RoleBtn = new System.Windows.Forms.Button();
+            this.ProductBtn = new System.Windows.Forms.Button();
+            this.CategoryvBtn = new System.Windows.Forms.Button();
+            this.AddStockBtn = new System.Windows.Forms.Button();
+            this.SupplierBtn = new System.Windows.Forms.Button();
+            this.SaleBtn = new System.Windows.Forms.Button();
+            this.SalDetailBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.AdminLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip
+            // backgroundWorker1
             // 
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu,
-            this.securityToolStripMenuItem,
-            this.inventoryToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1144, 33);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "MenuStrip";
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // fileMenu
+            // panel1
             // 
-            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator3,
-            this.toolStripSeparator4,
-            this.toolStripSeparator5,
-            this.signOutToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(54, 29);
-            this.fileMenu.Text = "&File";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(3015, 1395);
+            this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // toolStripSeparator3
+            // panel3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(941, 142);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(459, 244);
+            this.panel3.TabIndex = 1;
             // 
-            // toolStripSeparator4
+            // UserBtn
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
+            this.UserBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.UserBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.UserBtn.FlatAppearance.BorderSize = 0;
+            this.UserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserBtn.ForeColor = System.Drawing.Color.White;
+            this.UserBtn.Location = new System.Drawing.Point(138, 344);
+            this.UserBtn.Name = "UserBtn";
+            this.UserBtn.Size = new System.Drawing.Size(202, 76);
+            this.UserBtn.TabIndex = 23;
+            this.UserBtn.Text = "User";
+            this.UserBtn.UseVisualStyleBackColor = false;
+            this.UserBtn.Click += new System.EventHandler(this.UserBtn_Click);
             // 
-            // toolStripSeparator5
+            // UserRoleBtn
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(176, 6);
+            this.UserRoleBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.UserRoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserRoleBtn.ForeColor = System.Drawing.Color.White;
+            this.UserRoleBtn.Location = new System.Drawing.Point(138, 439);
+            this.UserRoleBtn.Name = "UserRoleBtn";
+            this.UserRoleBtn.Size = new System.Drawing.Size(202, 76);
+            this.UserRoleBtn.TabIndex = 24;
+            this.UserRoleBtn.Text = "UserRole";
+            this.UserRoleBtn.UseVisualStyleBackColor = true;
+            this.UserRoleBtn.Click += new System.EventHandler(this.UserRoleBtn_Click);
             // 
-            // signOutToolStripMenuItem
+            // RoleBtn
             // 
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(179, 34);
-            this.signOutToolStripMenuItem.Text = "SignOut";
-            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
+            this.RoleBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.RoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoleBtn.ForeColor = System.Drawing.Color.White;
+            this.RoleBtn.Location = new System.Drawing.Point(138, 541);
+            this.RoleBtn.Name = "RoleBtn";
+            this.RoleBtn.Size = new System.Drawing.Size(202, 76);
+            this.RoleBtn.TabIndex = 25;
+            this.RoleBtn.Text = "Role";
+            this.RoleBtn.UseVisualStyleBackColor = true;
+            this.RoleBtn.Click += new System.EventHandler(this.RoleBtn_Click);
             // 
-            // exitToolStripMenuItem
+            // ProductBtn
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(179, 34);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            this.ProductBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.ProductBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductBtn.ForeColor = System.Drawing.Color.White;
+            this.ProductBtn.Location = new System.Drawing.Point(138, 641);
+            this.ProductBtn.Name = "ProductBtn";
+            this.ProductBtn.Size = new System.Drawing.Size(202, 76);
+            this.ProductBtn.TabIndex = 26;
+            this.ProductBtn.Text = "Product";
+            this.ProductBtn.UseVisualStyleBackColor = true;
+            this.ProductBtn.Click += new System.EventHandler(this.ProductBtn_Click);
             // 
-            // securityToolStripMenuItem
+            // CategoryvBtn
             // 
-            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.userManagementToolStripMenuItem,
-            this.roleManagementToolStripMenuItem});
-            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
-            this.securityToolStripMenuItem.Text = "Security";
+            this.CategoryvBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.CategoryvBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CategoryvBtn.ForeColor = System.Drawing.Color.White;
+            this.CategoryvBtn.Location = new System.Drawing.Point(138, 740);
+            this.CategoryvBtn.Name = "CategoryvBtn";
+            this.CategoryvBtn.Size = new System.Drawing.Size(202, 76);
+            this.CategoryvBtn.TabIndex = 27;
+            this.CategoryvBtn.Text = "Category";
+            this.CategoryvBtn.UseVisualStyleBackColor = true;
+            this.CategoryvBtn.Click += new System.EventHandler(this.CategoryvBtn_Click);
             // 
-            // userManagementToolStripMenuItem
+            // AddStockBtn
             // 
-            this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
-            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.userManagementToolStripMenuItem.Text = "UserManagement";
-            this.userManagementToolStripMenuItem.Click += new System.EventHandler(this.userManagementToolStripMenuItem_Click);
+            this.AddStockBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.AddStockBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddStockBtn.ForeColor = System.Drawing.Color.White;
+            this.AddStockBtn.Location = new System.Drawing.Point(138, 839);
+            this.AddStockBtn.Name = "AddStockBtn";
+            this.AddStockBtn.Size = new System.Drawing.Size(202, 76);
+            this.AddStockBtn.TabIndex = 28;
+            this.AddStockBtn.Text = "Add Stock";
+            this.AddStockBtn.UseVisualStyleBackColor = true;
+            this.AddStockBtn.Click += new System.EventHandler(this.AddStockBtn_Click);
             // 
-            // roleManagementToolStripMenuItem
+            // SupplierBtn
             // 
-            this.roleManagementToolStripMenuItem.Name = "roleManagementToolStripMenuItem";
-            this.roleManagementToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.roleManagementToolStripMenuItem.Text = "RoleManagement";
-            this.roleManagementToolStripMenuItem.Click += new System.EventHandler(this.roleManagementToolStripMenuItem_Click);
+            this.SupplierBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.SupplierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SupplierBtn.ForeColor = System.Drawing.Color.White;
+            this.SupplierBtn.Location = new System.Drawing.Point(138, 935);
+            this.SupplierBtn.Name = "SupplierBtn";
+            this.SupplierBtn.Size = new System.Drawing.Size(202, 76);
+            this.SupplierBtn.TabIndex = 29;
+            this.SupplierBtn.Text = "Supplier";
+            this.SupplierBtn.UseVisualStyleBackColor = true;
+            this.SupplierBtn.Click += new System.EventHandler(this.SupplierBtn_Click);
             // 
-            // inventoryToolStripMenuItem
+            // SaleBtn
             // 
-            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
-            this.inventoryToolStripMenuItem.Text = "Inventory";
+            this.SaleBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.SaleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaleBtn.ForeColor = System.Drawing.Color.White;
+            this.SaleBtn.Location = new System.Drawing.Point(138, 1038);
+            this.SaleBtn.Name = "SaleBtn";
+            this.SaleBtn.Size = new System.Drawing.Size(202, 76);
+            this.SaleBtn.TabIndex = 30;
+            this.SaleBtn.Text = "sale";
+            this.SaleBtn.UseVisualStyleBackColor = true;
+            this.SaleBtn.Click += new System.EventHandler(this.SaleBtn_Click);
             // 
-            // toolStrip
+            // SalDetailBtn
             // 
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator1,
-            this.printToolStripButton,
-            this.printPreviewToolStripButton,
-            this.toolStripSeparator2,
-            this.helpToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(0, 33);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip.Size = new System.Drawing.Size(1144, 33);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "ToolStrip";
+            this.SalDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.SalDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalDetailBtn.ForeColor = System.Drawing.Color.White;
+            this.SalDetailBtn.Location = new System.Drawing.Point(138, 1140);
+            this.SalDetailBtn.Name = "SalDetailBtn";
+            this.SalDetailBtn.Size = new System.Drawing.Size(202, 76);
+            this.SalDetailBtn.TabIndex = 32;
+            this.SalDetailBtn.Text = "Sell Detail";
+            this.SalDetailBtn.UseVisualStyleBackColor = true;
+            this.SalDetailBtn.Click += new System.EventHandler(this.SalDetailBtn_Click);
             // 
-            // newToolStripButton
+            // panel2
             // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.newToolStripButton.Text = "New";
-            this.newToolStripButton.Click += new System.EventHandler(this.ShowNewForm);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.AdminLabel);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.SalDetailBtn);
+            this.panel2.Controls.Add(this.SaleBtn);
+            this.panel2.Controls.Add(this.SupplierBtn);
+            this.panel2.Controls.Add(this.AddStockBtn);
+            this.panel2.Controls.Add(this.CategoryvBtn);
+            this.panel2.Controls.Add(this.ProductBtn);
+            this.panel2.Controls.Add(this.RoleBtn);
+            this.panel2.Controls.Add(this.UserRoleBtn);
+            this.panel2.Controls.Add(this.UserBtn);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(845, 1425);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // openToolStripButton
+            // panel4
             // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.openToolStripButton.Text = "Open";
-            this.openToolStripButton.Click += new System.EventHandler(this.OpenFile);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Location = new System.Drawing.Point(1442, 142);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(459, 244);
+            this.panel4.TabIndex = 2;
             // 
-            // saveToolStripButton
+            // panel5
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.saveToolStripButton.Text = "Save";
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel5.Controls.Add(this.pictureBox4);
+            this.panel5.Location = new System.Drawing.Point(1952, 142);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(459, 244);
+            this.panel5.TabIndex = 2;
             // 
-            // toolStripSeparator1
+            // pictureBox1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(30, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 184);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // printToolStripButton
+            // pictureBox2
             // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.printToolStripButton.Text = "Print";
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(479, -14);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(456, 1421);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
             // 
-            // printPreviewToolStripButton
+            // pictureBox3
             // 
-            this.printPreviewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printPreviewToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripButton.Image")));
-            this.printPreviewToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.printPreviewToolStripButton.Name = "printPreviewToolStripButton";
-            this.printPreviewToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.printPreviewToolStripButton.Text = "Print Preview";
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(32, 29);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(215, 184);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
-            // toolStripSeparator2
+            // pictureBox4
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(25, 29);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(215, 184);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
-            // helpToolStripButton
+            // pictureBox5
             // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.helpToolStripButton.Text = "Help";
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(138, 32);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(229, 222);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 33;
+            this.pictureBox5.TabStop = false;
             // 
-            // statusStrip
+            // AdminLabel
             // 
-            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelUserName,
-            this.toolStripStatusLabel1UserRole});
-            this.statusStrip.Location = new System.Drawing.Point(0, 685);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1144, 32);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
+            this.AdminLabel.AutoSize = true;
+            this.AdminLabel.Location = new System.Drawing.Point(120, 280);
+            this.AdminLabel.Name = "AdminLabel";
+            this.AdminLabel.Size = new System.Drawing.Size(263, 50);
+            this.AdminLabel.TabIndex = 34;
+            this.AdminLabel.Text = "welcome Admin";
             // 
-            // toolStripStatusLabelUserName
+            // label1
             // 
-            this.toolStripStatusLabelUserName.Name = "toolStripStatusLabelUserName";
-            this.toolStripStatusLabelUserName.Size = new System.Drawing.Size(103, 25);
-            this.toolStripStatusLabelUserName.Text = "UserName: ";
+            this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(927, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(347, 78);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Dash Board";
             // 
-            // toolStripStatusLabel1UserRole
+            // panel6
             // 
-            this.toolStripStatusLabel1UserRole.Name = "toolStripStatusLabel1UserRole";
-            this.toolStripStatusLabel1UserRole.Size = new System.Drawing.Size(155, 25);
-            this.toolStripStatusLabel1UserRole.Text = "RoleName: Admin";
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel6.Controls.Add(this.pictureBox6);
+            this.panel6.Location = new System.Drawing.Point(2453, 142);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(459, 244);
+            this.panel6.TabIndex = 4;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
+            this.pictureBox6.Location = new System.Drawing.Point(25, 29);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(215, 184);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1144, 717);
-            this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.toolStrip);
-            this.Controls.Add(this.menuStrip);
+            this.ClientSize = new System.Drawing.Size(3015, 1395);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DashBoard";
+            this.Text = "W";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         #endregion
-
-
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem fileMenu;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1UserRole;
-        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUserName;
-        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem roleManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button SalDetailBtn;
+        private System.Windows.Forms.Button SaleBtn;
+        private System.Windows.Forms.Button SupplierBtn;
+        private System.Windows.Forms.Button AddStockBtn;
+        private System.Windows.Forms.Button CategoryvBtn;
+        private System.Windows.Forms.Button ProductBtn;
+        private System.Windows.Forms.Button RoleBtn;
+        private System.Windows.Forms.Button UserRoleBtn;
+        private System.Windows.Forms.Button UserBtn;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        public System.Windows.Forms.Label AdminLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
 

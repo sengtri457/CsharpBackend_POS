@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group1_POS.models.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,6 +133,96 @@ namespace Group1_POS.Views
            UserForm userForm = new UserForm();
             userForm.MdiParent = this;
             userForm.Show();
+        }
+
+        private void securityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RoleForm role = new RoleForm();
+            role.Show();
+        }
+
+        private void toolStripStatusLabel1UserRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabelUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserBtn_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm();
+            userForm.Show();
+        }
+
+        private void UserRoleBtn_Click(object sender, EventArgs e)
+        {
+
+            RoleForm roleForm = new RoleForm();
+            roleForm.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SupplierBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoleBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductBtn_Click(object sender, EventArgs e)
+        {
+            ProductForm proform = new ProductForm();
+            proform.Show();
+        }
+
+        private void CategoryvBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddStockBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaleBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SalDetailBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

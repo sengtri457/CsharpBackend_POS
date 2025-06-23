@@ -46,7 +46,8 @@ namespace Group1_POS.models.User
                 {
                     DashBoard das = new DashBoard();
                     das.Show();
-                    das.toolStripStatusLabelUserName.Text = "UserName: " + this.UserName;
+                    das.AdminLabel.Text = "Welcome: " + this.UserName;
+/*                    das.toolStripStatusLabelUserName.Text = "UserName: " + this.UserName;*/
                     User.UserId = int.Parse(Database.tbl.Rows[0]["Id"].ToString());
                     MessageBox.Show("Login Sucessful");
                     form.Hide();
@@ -151,7 +152,7 @@ namespace Group1_POS.models.User
                 {
                     return;
                 }
-                this._sql = "insert into tableUser(UserName,Password,Gender,Email,Status,CreateBy,CreateAt)Values(@UserName,@Password,@Gender,@Email,@Status,@CreateBy,NOW())";
+                this._sql = "insert into tableUser(UserName,Password,Gender,Email,Status,CreateBy,CreateAt,UpdateBy,UpdateAt) Values(@UserName,@Password,@Gender,@Email,@Status,@CreateBy, GETDATE(),@UpdateBy, GETDATE())";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
                 Database.cmd.Parameters.AddWithValue("@UserName", this.UserName);
                 Database.cmd.Parameters.AddWithValue("@Password", this.Password);
@@ -159,7 +160,7 @@ namespace Group1_POS.models.User
                 Database.cmd.Parameters.AddWithValue("@Email", this.Email);
                 Database.cmd.Parameters.AddWithValue("@Status", this.Status);
                 Database.cmd.Parameters.AddWithValue("@CreateBy", User.UserId);
-
+                Database.cmd.Parameters.AddWithValue("@UpdateBy", User.UserId);
                 this._Rowffecticted = Database.cmd.ExecuteNonQuery();
                 if (this._Rowffecticted > 0)
                 {
@@ -197,7 +198,9 @@ namespace Group1_POS.models.User
                     this.Password = dr["Password"].ToString();
                     this.CreateBy = dr["CreateBy"].ToString();
                     this.CreateAt = Convert.ToDateTime(dr["CreateAt"]);
-                    object[] row = { this.Id, this.UserName, this.Email, this.Gender, this.Password,this.Status ,this.CreateAt,this.CreateBy };
+                    this.UpdateBy = dr["CreateBy"].ToString();
+                    this.UpdateAt = Convert.ToDateTime(dr["CreateAt"]);
+                    object[] row = { this.Id, this.UserName, this.Email, this.Gender, this.Password,this.Status ,this.CreateAt,this.CreateBy, this.UpdateBy,this.UpdateAt };
                     dg.Rows.Add(row);
                 }
             }
@@ -207,33 +210,37 @@ namespace Group1_POS.models.User
             }
         }
 
-
         public override void SearchData(DataGridView dg)
         {
             try
             {
-                this._sql = "SELECT * FROM tblRole WHERE UserName LIKE @UserName";
+                this._sql = "SELECT * FROM tableUser WHERE UserName LIKE '%'+@UserName+'%'";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
-                Database.cmd.Parameters.AddWithValue("@UserName", $"%{this.UserName}%");
-
+                Database.cmd.Parameters.AddWithValue("@UserName",this.UserName);
                 Database.ads = new SqlDataAdapter(Database.cmd);
                 Database.tbl = new DataTable();
                 Database.ads.Fill(Database.tbl);
-
                 dg.Rows.Clear();
+
                 foreach (DataRow dr in Database.tbl.Rows)
                 {
-                    this.Id = int.Parse(dr["ID"].ToString());
+                    this.Id = Convert.ToInt32(dr["ID"]);
                     this.UserName = dr["UserName"].ToString();
-                    object[] row = { this.Id, this.UserName };
+                    this.Email = dr["Email"].ToString();
+                    this.Gender = dr["Gender"].ToString();
+                    this.Status = Convert.ToBoolean(dr["Status"]);
+                    this.Password = dr["Password"].ToString();
+                    this.CreateBy = dr["CreateBy"].ToString();
+                    this.CreateAt = Convert.ToDateTime(dr["CreateAt"]);
+                    this.UpdateBy = dr["CreateBy"].ToString();
+                    this.UpdateAt = Convert.ToDateTime(dr["CreateAt"]);
+                    object[] row = { this.Id, this.UserName, this.Email, this.Gender, this.Password, this.Status, this.CreateAt, this.CreateBy, this.UpdateBy, this.UpdateAt };
                     dg.Rows.Add(row);
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error Search Data: {ex.Message}");
+                MessageBox.Show($"Cannot Get Data: {ex.Message}");
             }
         }
 
@@ -254,7 +261,7 @@ namespace Group1_POS.models.User
                     DataGridViewRow DGV = new DataGridViewRow();
                     DGV = dg.SelectedRows[0];
                     this.Id = int.Parse(DGV.Cells[0].Value.ToString());
-                    this._sql = "delete from tblRole where Id=@Id";
+                    this._sql = "delete from tableUser where Id=@Id";
                     Database.cmd = new SqlCommand(this._sql, Database.con);
                     Database.cmd.Parameters.AddWithValue("@Id", this.Id);
                     this._Rowffecticted = Database.cmd.ExecuteNonQuery();
@@ -301,7 +308,7 @@ namespace Group1_POS.models.User
                 DataGridViewRow DGV = new DataGridViewRow();
                 DGV = dg.SelectedRows[0];
                 this.Id = int.Parse(DGV.Cells[0].Value.ToString());
-                this._sql = "update tblRole set UserName=@UserName where Id=@Id";
+                this._sql = "update tableUser set UserName=@UserName where Id=@Id";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
                 Database.cmd.Parameters.AddWithValue("@UserName", this.UserName);
                 Database.cmd.Parameters.AddWithValue("@Id", this.Id);

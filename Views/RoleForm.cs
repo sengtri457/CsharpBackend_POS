@@ -88,5 +88,13 @@ namespace Group1_POS.Views
             role.SearchData(dg: dgRole);
             
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            DashBoard main = new DashBoard();
+            main.Show();
+            this.Hide();
+        }
     }
 }

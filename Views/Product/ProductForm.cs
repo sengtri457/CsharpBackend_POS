@@ -1,4 +1,5 @@
 ﻿using Group1_POS.models.Method;
+using Group1_POS.models.Product;
 using Group1_POS.models.Role;
 using Group1_POS.models.User;
 using System;
@@ -14,14 +15,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Group1_POS.Views
 {
-    public partial class UserForm : Form
+    public partial class ProductForm : Form
     {
-        public UserForm()
+        public ProductForm()
         {
             InitializeComponent();
         }
         Role role;
         User user;
+        Product product;
         private void txtRole_TextChanged(object sender, EventArgs e)
         {
 
@@ -30,26 +32,19 @@ namespace Group1_POS.Views
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            if (HandleLogic.EmptytextBox(txtUserName,txtEmail,textPass))
+            if (HandleLogic.EmptytextBox(txtName,txtBarcode,txtsell))
             {
                 return;
             }
-            user = new User();
-            user.UserName = txtUserName.Text.Trim();
-            user.Gender = cboGender.Text.Trim();
-            user.Email = txtEmail.Text.Trim();
-            user.Password = textPass.Text.Trim();
-            if (rTrue.Checked)
-            {
-                user.Status = true;
-            }
-            else
-            {
-                user.Status = false;
-            }
-            user.createRole();
-            HandleLogic.ClearTextBox(txtUserName,txtEmail,textPass);
-            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            product = new Product();
+            product.Name = txtName.Text.Trim();
+            product.Barcode = txtBarcode.Text.Trim();   
+            product.SellPrice = double.Parse(txtsell.Text.Trim());
+            product.QtyInstock = int.Parse(txtQty.Text.Trim());
+            product.CategoryId = int.Parse(txtCategoryId.Text.Trim());
+            product.Photo = txtPhoto.Text.Trim();
+            product.createRole();
+            HandleLogic.ClearTextBox(txtName,txtBarcode,txtsell);
             
         }
 
@@ -63,40 +58,40 @@ namespace Group1_POS.Views
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            if (HandleLogic.EmptytextBox(txtUserName))
+            if (HandleLogic.EmptytextBox(txtName))
             {
                 return;
             }
             user = new User();
-            user.UserName = txtUserName.Text.Trim();
+            user.UserName = txtName.Text.Trim();
             user.update(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtName);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtName);
             user = new User();
             user.deleted(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtName);
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtName);
             user = new User();
-            user.UserName = txtUserName.Text.Trim();
+            user.UserName = txtName.Text.Trim();
             user.SearchData(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtName);
 
         }
 
         private void dgRole_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             user = new User();
-            user.TranferToControls(dg: dgUser, txtUserName);
+            user.TranferToControls(dg: dgUser, txtName);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -110,6 +105,9 @@ namespace Group1_POS.Views
             DashBoard main = new DashBoard();
             main.Show();
             this.Hide();
+            DashBoard das = new DashBoard();
+            user = new User();
+            das.AdminLabel.Text = "User Management" + user.UserName;
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
