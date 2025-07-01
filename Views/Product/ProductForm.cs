@@ -91,7 +91,7 @@ namespace Group1_POS.Views
         private void dgRole_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             user = new User();
-            user.TranferToControls(dg: dgUser, txtName);
+          /*  user.TranferToControls(dg: dgUser, txtName);*/
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -118,6 +118,11 @@ namespace Group1_POS.Views
             user.UserName = txtSearch.Text.Trim();
                 user.SearchData(dg: dgUser);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

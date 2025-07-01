@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyUser = Group1_POS.models.User;
 using System.Windows.Forms;
 
 namespace Group1_POS.Views
@@ -223,6 +224,57 @@ namespace Group1_POS.Views
         private void SalDetailBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DashBoard_Load(object sender, EventArgs e)
+        {
+            User user = new User();
+            if (user != null && !string.IsNullOrEmpty(User.PermissionRolename))
+            {
+                if (User.PermissionRolename.Equals("Admin"))
+                {
+                    UserBtn.Enabled = true;
+                    UserRoleBtn.Enabled = true;
+                    RoleBtn.Enabled = true;
+                }
+            }
+            else
+            {
+                UserBtn.Enabled = false;
+            }
+
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserForm form = new UserForm();
+            form.Show();
+           
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripTextRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            LoginForm form = new LoginForm();
+            form.Show();
+            this.Hide();
+
+        }
+
+        private void LogoutBtn_Click_1(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

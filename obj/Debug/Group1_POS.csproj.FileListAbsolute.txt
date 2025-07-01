@@ -12,3 +12,4 @@ D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.DashBoard.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.RoleForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.UserForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.ProductForm.resources
+D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.UserRoleForm.resources

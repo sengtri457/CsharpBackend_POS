@@ -40,7 +40,7 @@ namespace Group1_POS.Views
             user.UserName = txtUsername.Text.Trim();
             user.Password = txtPass.Text.Trim();
             user.LogIn(this);
-            HandleLogic.ClearTextBox(txtUsername);
+            HandleLogic.ClearTextBox(txtUsername, txtPass);
 
 
         }

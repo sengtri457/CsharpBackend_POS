@@ -1,6 +1,6 @@
 ﻿namespace Group1_POS.Views
 {
-    partial class RoleForm
+    partial class UserRoleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserRoleForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.dgRole = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearchRole = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -181,7 +181,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dgRole);
-            this.panel2.Controls.Add(this.txtSearchRole);
+            this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,15 +230,14 @@
             this.Column2.ReadOnly = true;
             this.Column2.Width = 200;
             // 
-            // txtSearchRole
+            // txtSearch
             // 
-            this.txtSearchRole.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSearchRole.Location = new System.Drawing.Point(256, 120);
-            this.txtSearchRole.Name = "txtSearchRole";
-            this.txtSearchRole.Size = new System.Drawing.Size(355, 43);
-            this.txtSearchRole.TabIndex = 2;
-            this.txtSearchRole.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtSearchRole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSearch.Location = new System.Drawing.Point(256, 120);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(355, 43);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -298,7 +297,7 @@
         private System.Windows.Forms.DataGridView dgRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.TextBox txtSearchRole;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;

@@ -51,6 +51,9 @@
             this.TtitleRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgUser = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,11 +62,7 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -96,7 +95,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(748, 1083);
+            this.panel1.Size = new System.Drawing.Size(748, 1118);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -123,7 +122,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(518, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 1109);
+            this.pictureBox1.Size = new System.Drawing.Size(278, 1119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -325,7 +324,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel2.Location = new System.Drawing.Point(731, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1572, 1119);
+            this.panel2.Size = new System.Drawing.Size(2016, 1119);
             this.panel2.TabIndex = 7;
             // 
             // dgUser
@@ -344,8 +343,7 @@
             this.Status,
             this.Column7,
             this.CreateBy,
-            this.Column6,
-            this.Column8});
+            this.Column9});
             this.dgUser.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgUser.GridColor = System.Drawing.Color.Black;
             this.dgUser.Location = new System.Drawing.Point(0, 249);
@@ -355,9 +353,41 @@
             this.dgUser.RowHeadersWidth = 62;
             this.dgUser.RowTemplate.Height = 28;
             this.dgUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUser.Size = new System.Drawing.Size(1572, 870);
+            this.dgUser.Size = new System.Drawing.Size(2016, 870);
             this.dgUser.TabIndex = 3;
             this.dgUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRole_CellDoubleClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.Location = new System.Drawing.Point(193, 102);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(398, 59);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(23, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 42);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Search By";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(429, 57);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Display User";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Column1
             // 
@@ -423,60 +453,20 @@
             this.CreateBy.ReadOnly = true;
             this.CreateBy.Width = 150;
             // 
-            // Column6
+            // Column9
             // 
-            this.Column6.HeaderText = "UpdateBy";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 150;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "UpdateAt";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 150;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.Location = new System.Drawing.Point(193, 102);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(398, 59);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(23, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Search By";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(429, 57);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Display User";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Column9.HeaderText = "RoleName";
+            this.Column9.MinimumWidth = 8;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 150;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(2231, 1083);
+            this.ClientSize = new System.Drawing.Size(2524, 1118);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -530,7 +520,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreateBy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

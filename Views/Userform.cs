@@ -47,6 +47,7 @@ namespace Group1_POS.Views
             {
                 user.Status = false;
             }
+            user.RoleId = user.GetRoleId(cboRoleName);
             user.createRole();
             HandleLogic.ClearTextBox(txtUserName,txtEmail,textPass);
             HandleLogic.ClearComboBox(cboGender, cboRoleName);
@@ -69,6 +70,18 @@ namespace Group1_POS.Views
             }
             user = new User();
             user.UserName = txtUserName.Text.Trim();
+            user.Gender = cboGender.Text.Trim();
+            user.Email = txtEmail.Text.Trim();
+            user.Password = textPass.Text.Trim();
+            if (rTrue.Checked)
+            {
+                user.Status = true;
+            }
+            else
+            {
+                user.Status = false;
+            }
+            user.RoleId = user.GetRoleId(cboRoleName);
             user.update(dg: dgUser);
             HandleLogic.ClearTextBox(txtUserName);
 
@@ -96,7 +109,7 @@ namespace Group1_POS.Views
         private void dgRole_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             user = new User();
-            user.TranferToControls(dg: dgUser, txtUserName);
+            user.TranferToControls(dg: dgUser, txtUserName ,  cboGender,  txtEmail, textPass, cboRoleName, rTrue, rFalse);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

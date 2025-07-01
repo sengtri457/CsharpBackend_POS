@@ -1,6 +1,5 @@
 ﻿using Group1_POS.models.Method;
 using Group1_POS.models.Role;
-using Group1_POS.models.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +12,9 @@ using System.Windows.Forms;
 
 namespace Group1_POS.Views
 {
-    public partial class RoleForm : Form
+    public partial class UserRoleForm : Form
     {
-        public RoleForm()
-        {
-            InitializeComponent();
-        }
+        public UserRoleForm() => InitializeComponent();
         Role role;
         private void txtRole_TextChanged(object sender, EventArgs e)
         {
@@ -96,19 +92,6 @@ namespace Group1_POS.Views
             DashBoard main = new DashBoard();
             main.Show();
             this.Hide();
-        }
-
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-
-            if (e.KeyChar == (char)13)
-            {
-                 role = new Role();
-                role.RoleName = txtSearchRole.Text.Trim();
-                role.SearchData(dg: dgRole);
-            }
-
         }
     }
 }
