@@ -46,11 +46,7 @@ namespace Group1_POS.models.User
 
                 if(Database.tbl.Rows.Count > 0)
                 {
-                    DashBoard das = new DashBoard();
-                    das.AdminLabel.Text = "Welcome: " + this.UserName;
-                    User.UserId = int.Parse(Database.tbl.Rows[0]["Id"].ToString());
-                    User.PermissionRolename = Database.tbl.Rows[0]["RoleName"].ToString();
-                    das.Show();
+                    GetUserName();
                     form.Hide();
                 }
                 else
@@ -67,6 +63,19 @@ namespace Group1_POS.models.User
 
             }
         }
+
+        public void GetUserName()
+        {
+            DashBoard das = new DashBoard();
+            das.AdminLabel.Text = "Welcome: " + this.UserName;
+            User.UserId = int.Parse(Database.tbl.Rows[0]["Id"].ToString());
+            User.PermissionRolename = Database.tbl.Rows[0]["RoleName"].ToString();
+            das.RoleLabel.Text = "Role: " + PermissionRolename;
+            das.Show();
+
+        }
+
+
         private int _Rowffecticted;
 
         public void SetRoleName( ComboBox cboRoleName)
@@ -145,7 +154,7 @@ namespace Group1_POS.models.User
 
         }
             SqlTransaction sqlTransaction = null;
-        public override void createRole()
+        public override void createRole(DataGridView dg)
         {
             try
             {
@@ -174,6 +183,7 @@ namespace Group1_POS.models.User
                 sqlTransaction.Commit(); // Commit the transaction
 
                 MessageBox.Show("Create User Sucessful");
+                getDataGrid(dg);
             }
             catch (Exception ex)
             {
@@ -289,7 +299,7 @@ namespace Group1_POS.models.User
             }
         }
 
-        public void TranferToControls(DataGridView dg, TextBox txtRole , ComboBox cboGender, TextBox txtEmail , TextBox txtPass , ComboBox cboRole , RadioButton rTrue, RadioButton rFalse)
+        public void TranferToControls(DataGridView dg, TextBox txtRole, ComboBox cboGender, TextBox txtEmail, TextBox txtPass, ComboBox cboRole, RadioButton rTrue, RadioButton rFalse)
         {
             if (dg.Rows.Count <= 0)
             {
@@ -301,17 +311,22 @@ namespace Group1_POS.models.User
             cboGender.Text = DGV.Cells[3].Value.ToString();
             txtEmail.Text = DGV.Cells[2].Value.ToString();
             txtPass.Text = DGV.Cells[4].Value.ToString();
-            cboRole.Text = DGV.Cells[10].Value.ToString();
-            if (Database.tbl.Rows[0]["Status"].ToString().Equals("true"))
+            cboRole.Text = DGV.Cells[8].Value.ToString();
+
+            string status = DGV.Cells[5].Value?.ToString()?.ToLower();
+
+            if (status == "true")
             {
-                rTrue.Checked = false;
+                rTrue.Checked = true;
+                rFalse.Checked = false;
             }
             else
             {
+                rTrue.Checked = false;
                 rFalse.Checked = true;
             }
-
         }
+            
         public override void update(DataGridView dg)
         {
             try
@@ -343,17 +358,18 @@ namespace Group1_POS.models.User
               /*  update Info UserRole*/
 
                 this._sql = "update tblUserRole set RoleId =@RoleId where UserId=@UserId";
-                Database.cmd = new SqlCommand(this._sql, Database.con, sqlTransaction); // Use the transaction
+                Database.cmd = new SqlCommand(this._sql, Database.con, sqlTransaction);
                 Database.cmd.Parameters.AddWithValue("@RoleId", this.RoleId);
                 Database.cmd.Parameters.AddWithValue("@UserId", this.Id);
                 Database.cmd.ExecuteNonQuery();
-                sqlTransaction.Commit(); // Commit the transaction
+                sqlTransaction.Commit();
                 MessageBox.Show("Updated User Sucessful");
+                getDataGrid(dg);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error Update Row {ex.Message}");
-                sqlTransaction.Rollback(); // Rollback the transaction if an error occurs
+                sqlTransaction.Rollback(); 
             }
         }
     }

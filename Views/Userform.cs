@@ -48,7 +48,7 @@ namespace Group1_POS.Views
                 user.Status = false;
             }
             user.RoleId = user.GetRoleId(cboRoleName);
-            user.createRole();
+            user.createRole(dg: dgUser);
             HandleLogic.ClearTextBox(txtUserName,txtEmail,textPass);
             HandleLogic.ClearComboBox(cboGender, cboRoleName);
             
@@ -83,26 +83,30 @@ namespace Group1_POS.Views
             }
             user.RoleId = user.GetRoleId(cboRoleName);
             user.update(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtUserName,txtEmail,textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            txtUserName.Focus();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtUserName);
             user = new User();
             user.deleted(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtUserName, txtEmail, textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            txtUserName.Focus();
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtUserName);
             user = new User();
             user.UserName = txtUserName.Text.Trim();
             user.SearchData(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            HandleLogic.ClearTextBox(txtUserName, txtEmail, textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            txtUserName.Focus();
 
         }
 

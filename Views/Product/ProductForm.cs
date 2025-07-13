@@ -32,59 +32,66 @@ namespace Group1_POS.Views
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            if (HandleLogic.EmptytextBox(txtName,txtBarcode,txtsell))
+            if (HandleLogic.EmptytextBox(txtProductName,txtBarcode,txtSellPrice))
             {
                 return;
             }
             product = new Product();
-            product.Name = txtName.Text.Trim();
+            product.Name = txtProductName.Text.Trim();
             product.Barcode = txtBarcode.Text.Trim();   
-            product.SellPrice = double.Parse(txtsell.Text.Trim());
-            product.QtyInstock = int.Parse(txtQty.Text.Trim());
-            product.CategoryId = int.Parse(txtCategoryId.Text.Trim());
-            product.Photo = txtPhoto.Text.Trim();
-            product.createRole();
-            HandleLogic.ClearTextBox(txtName,txtBarcode,txtsell);
-            
+            product.SellPrice = double.Parse(txtSellPrice.Text.Trim());
+            product.Photo = Product.PathPhoto;
+            product.CategoryId = product.GetProductId(cboProductName);
+            product.createRole(dg: dgProduct);
+            HandleLogic.ClearTextBox(txtProductName,txtBarcode,txtSellPrice);
+            HandleLogic.ClearComboBox(cboProductName);
+            Product.PathPhoto = "";
+            txtProductName.Focus();
+
         }
 
         private void RoleForm_Load(object sender, EventArgs e)
         {
-            user = new User();
-            user.SetRoleName(cboRoleName);
-            user.getDataGrid(dg: dgUser);
+            product = new Product();
+            product.SetProductName(cboProductName);
+            product.getDataGrid(dg: dgProduct);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            if (HandleLogic.EmptytextBox(txtName))
+            if (HandleLogic.EmptytextBox(txtProductName))
             {
                 return;
             }
-            user = new User();
-            user.UserName = txtName.Text.Trim();
-            user.update(dg: dgUser);
-            HandleLogic.ClearTextBox(txtName);
+            product = new Product();
+            product.Name = txtProductName.Text.Trim();
+            product.Barcode = txtBarcode.Text.Trim();
+            product.SellPrice = double.Parse(txtSellPrice.Text.Trim());
+            product.Photo = Product.PathPhoto;
+            product.CategoryId = product.GetProductId(cboProductName);
+            product.update(dg: dgProduct);
+            HandleLogic.ClearTextBox(txtProductName, txtBarcode, txtSellPrice);
+            HandleLogic.ClearComboBox(cboProductName);
+            txtProductName.Focus();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtName);
-            user = new User();
-            user.deleted(dg: dgUser);
-            HandleLogic.ClearTextBox(txtName);
+            HandleLogic.ClearTextBox(txtProductName);
+            product = new Product();
+            product.deleted(dg: dgProduct);
+            HandleLogic.ClearTextBox(txtProductName);
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtName);
+            HandleLogic.ClearTextBox(txtProductName);
             user = new User();
-            user.UserName = txtName.Text.Trim();
-            user.SearchData(dg: dgUser);
-            HandleLogic.ClearTextBox(txtName);
+            user.UserName = txtProductName.Text.Trim();
+            user.SearchData(dg: dgProduct);
+            HandleLogic.ClearTextBox(txtProductName);
 
         }
 
@@ -114,15 +121,50 @@ namespace Group1_POS.Views
         {
             if(e.KeyChar == (char)13)
             {
-                User user = new User();
-            user.UserName = txtSearch.Text.Trim();
-                user.SearchData(dg: dgUser);
+                Product product = new Product();
+            product.Name = txtSearch.Text.Trim();
+                product.SearchData(dg: dgProduct);
             }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBrower_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg;*.jpeg;*.png";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                // Show selected image in PictureBox
+                PicPhoto.Image = Image.FromFile(ofd.FileName);
+                PicPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                // ✅ Store image path for later use
+                Product.PathPhoto = ofd.FileName;
+            }
+
+        }
+
+        private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            if (cboProductName.SelectedIndex != -1)
+            {
+                // Get the category ID from the database using the selected name
+                int categoryId = product.GetProductId(cboProductName);
+
+                // Assign it to your product's CategoryId property
+                product.CategoryId = categoryId;
+            }        }
+
+        private void dgProduct_DoubleClick(object sender, EventArgs e)
+        {
+            product = new Product();
+            product.TranferToControls(dg: dgProduct, txtProductName, txtBarcode, txtSellPrice, cboProductName,PicPhoto);
         }
     }
 }

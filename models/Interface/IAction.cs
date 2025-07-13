@@ -8,7 +8,7 @@ namespace Group1_POS.models.Interface
 {
     internal interface IAction
     {
-        void createRole();
+        void createRole(DataGridView dg);
         void update(DataGridView dg);
         void deleted(DataGridView dg);
         void getDataGrid(DataGridView dg);

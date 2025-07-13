@@ -46,9 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Category\Category.cs" />
     <Compile Include="models\Method\HandleLogic.cs" />
     <Compile Include="models\Product\Product.cs" />
     <Compile Include="models\User\User.cs" />
+    <Compile Include="Views\Category\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Category\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,9 @@
     <Compile Include="Views\UserRole\UserRoleForm.Designer.cs">
       <DependentUpon>UserRoleForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Category\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>

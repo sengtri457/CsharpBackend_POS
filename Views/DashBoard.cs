@@ -235,14 +235,12 @@ namespace Group1_POS.Views
                 {
                     UserBtn.Enabled = true;
                     UserRoleBtn.Enabled = true;
-                    RoleBtn.Enabled = true;
                 }
             }
             else
             {
                 UserBtn.Enabled = false;
             }
-
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -274,6 +272,25 @@ namespace Group1_POS.Views
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();
+            productForm.Show();
+            this.Hide();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            CategoryForm category = new CategoryForm();
+            category.Show();
             this.Hide();
         }
     }

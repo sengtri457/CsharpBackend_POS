@@ -51,9 +51,6 @@
             this.TtitleRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgUser = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +60,9 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -95,7 +95,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(748, 1118);
+            this.panel1.Size = new System.Drawing.Size(748, 1106);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -120,7 +120,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(518, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(520, -13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(278, 1119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,11 +320,12 @@
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(731, 0);
+            this.panel2.Location = new System.Drawing.Point(748, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2016, 1119);
+            this.panel2.Size = new System.Drawing.Size(1198, 1106);
             this.panel2.TabIndex = 7;
             // 
             // dgUser
@@ -346,48 +347,16 @@
             this.Column9});
             this.dgUser.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgUser.GridColor = System.Drawing.Color.Black;
-            this.dgUser.Location = new System.Drawing.Point(0, 249);
+            this.dgUser.Location = new System.Drawing.Point(0, 236);
             this.dgUser.MultiSelect = false;
             this.dgUser.Name = "dgUser";
             this.dgUser.ReadOnly = true;
             this.dgUser.RowHeadersWidth = 62;
             this.dgUser.RowTemplate.Height = 28;
             this.dgUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUser.Size = new System.Drawing.Size(2016, 870);
+            this.dgUser.Size = new System.Drawing.Size(1198, 870);
             this.dgUser.TabIndex = 3;
             this.dgUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRole_CellDoubleClick);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.Location = new System.Drawing.Point(193, 102);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(398, 59);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(23, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Search By";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(429, 57);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Display User";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Column1
             // 
@@ -461,12 +430,44 @@
             this.Column9.ReadOnly = true;
             this.Column9.Width = 150;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.Location = new System.Drawing.Point(193, 102);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(398, 59);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(23, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 42);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Search By";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(429, 57);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Display User";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(2524, 1118);
+            this.ClientSize = new System.Drawing.Size(1946, 1106);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

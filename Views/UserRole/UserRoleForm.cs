@@ -30,7 +30,7 @@ namespace Group1_POS.Views
             }
             role = new Role();
             role.RoleName = txtRole.Text.Trim();
-            role.createRole();
+            role.createRole(dg: dgRole);
             HandleLogic.ClearTextBox(txtRole);
         }
 
