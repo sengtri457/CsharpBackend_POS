@@ -1,6 +1,3 @@
-D:\c#\Group1_POS\bin\Debug\Group1_POS.exe.config
-D:\c#\Group1_POS\bin\Debug\Group1_POS.exe
-D:\c#\Group1_POS\bin\Debug\Group1_POS.pdb
 D:\c#\Group1_POS\obj\Debug\Group1_POS.csproj.AssemblyReference.cache
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.CategoryForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.DashBoard.resources
@@ -12,5 +9,9 @@ D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.RoleForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.UserRoleForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.csproj.GenerateResource.cache
 D:\c#\Group1_POS\obj\Debug\Group1_POS.csproj.CoreCompileInputs.cache
+D:\c#\Group1_POS\bin\Debug\Group1_POS.exe.config
+D:\c#\Group1_POS\bin\Debug\Group1_POS.exe
+D:\c#\Group1_POS\bin\Debug\Group1_POS.pdb
 D:\c#\Group1_POS\obj\Debug\Group1_POS.exe
 D:\c#\Group1_POS\obj\Debug\Group1_POS.pdb
+D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.AddStockForm.resources

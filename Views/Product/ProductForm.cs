@@ -1,6 +1,7 @@
 ﻿using Group1_POS.models.Method;
 using Group1_POS.models.Product;
 using Group1_POS.models.Role;
+using Group1_POS.models.Stock;
 using Group1_POS.models.User;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,7 @@ namespace Group1_POS.Views
             product.createRole(dg: dgProduct);
             HandleLogic.ClearTextBox(txtProductName,txtBarcode,txtSellPrice);
             HandleLogic.ClearComboBox(cboProductName);
+            PicPhoto.Image = null;
             Product.PathPhoto = "";
             txtProductName.Focus();
 
@@ -72,6 +74,8 @@ namespace Group1_POS.Views
             product.update(dg: dgProduct);
             HandleLogic.ClearTextBox(txtProductName, txtBarcode, txtSellPrice);
             HandleLogic.ClearComboBox(cboProductName);
+            PicPhoto.Image = null;
+            Product.PathPhoto = "";
             txtProductName.Focus();
 
         }
@@ -98,7 +102,6 @@ namespace Group1_POS.Views
         private void dgRole_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             user = new User();
-          /*  user.TranferToControls(dg: dgUser, txtName);*/
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -154,10 +157,7 @@ namespace Group1_POS.Views
             Product product = new Product();
             if (cboProductName.SelectedIndex != -1)
             {
-                // Get the category ID from the database using the selected name
                 int categoryId = product.GetProductId(cboProductName);
-
-                // Assign it to your product's CategoryId property
                 product.CategoryId = categoryId;
             }        }
 
@@ -165,6 +165,14 @@ namespace Group1_POS.Views
         {
             product = new Product();
             product.TranferToControls(dg: dgProduct, txtProductName, txtBarcode, txtSellPrice, cboProductName,PicPhoto);
+        }
+
+        private void addStockMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            AddStockForm addStockForm = new AddStockForm();
+            AddStock stock = new AddStock();
+            stock.TranserDataToControl(dgProduct, addStockForm.txtProductId, addStockForm.txtProductName);
+            addStockForm.ShowDialog();
         }
     }
 }

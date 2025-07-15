@@ -172,8 +172,9 @@ namespace Group1_POS.models.Product
                     this.Barcode = dr["Barcode"].ToString();
                     this.SellPrice = double.Parse(dr["SellPrice"].ToString());
                     this.QtyInstock = int.Parse(dr["UnitInstock"].ToString());
+                    this.Photo = dr["PhotoProduct"].ToString();
                     string CategoryName = dr["CategoryName"].ToString();
-                    object[] row = { this.Id, this.Name, this.Barcode, this.SellPrice, this.QtyInstock, CategoryName };
+                    object[] row = { this.Id, this.Name, this.Barcode, this.SellPrice, this.QtyInstock,this.Photo, CategoryName };
                     dg.Rows.Add(row);
                 }
             }
@@ -202,8 +203,9 @@ namespace Group1_POS.models.Product
                     this.Barcode = dr["Barcode"].ToString();
                     this.SellPrice = double.Parse(dr["SellPrice"].ToString());
                     this.QtyInstock = int.Parse(dr["UnitInstock"].ToString());
+                    this.Photo = dr["PhotoProduct"].ToString();
                     string CategoryName = dr["CategoryName"].ToString();
-                    object[] row = { this.Id, this.Name, this.Barcode, this.SellPrice, this.QtyInstock, CategoryName };
+                    object[] row = { this.Id, this.Name, this.Barcode, this.SellPrice, this.QtyInstock, this.Photo, CategoryName };
                     dg.Rows.Add(row);
                 }
             }
@@ -250,7 +252,7 @@ namespace Group1_POS.models.Product
         }
 
 
-        public void TranferToControls(DataGridView dg, TextBox txtProductName, TextBox txtBarcode,TextBox txtSellPrice,ComboBox cboProductName, PictureBox imBox)
+        public void TranferToControls(DataGridView dg, TextBox txtProductName, TextBox txtBarcode,TextBox txtSellPrice,ComboBox cboProductName, PictureBox PicPhoto)
         {
             if (dg.Rows.Count <= 0)
             {
@@ -258,10 +260,30 @@ namespace Group1_POS.models.Product
             }
             DataGridViewRow DGV = new DataGridViewRow();
             DGV = dg.SelectedRows[0];
-            txtProductName.Text = DGV.Cells[1].Value.ToString();
-            txtBarcode.Text = DGV.Cells[2].Value.ToString();
-            txtSellPrice.Text = DGV.Cells[3].Value.ToString();
-            cboProductName.Text = DGV.Cells[5].Value.ToString();
+            this.Id = int.Parse(DGV.Cells[0].Value.ToString());
+            this._sql = "select * from View_Prodcut_category where ProductId=@Id";
+            Database.cmd = new SqlCommand(this._sql, Database.con);
+            Database.cmd.Parameters.AddWithValue("@Id", this.Id);
+            Database.cmd.ExecuteNonQuery();
+            Database.ads = new SqlDataAdapter(Database.cmd);
+            Database.tbl = new DataTable();
+            Database.ads.Fill(Database.tbl);
+            if(dg.Rows.Count > 0){
+
+                txtProductName.Text = Database.tbl.Rows[0]["ProductName"].ToString();
+                txtBarcode.Text = Database.tbl.Rows[0]["Barcode"].ToString();
+                txtSellPrice.Text = Database.tbl.Rows[0]["SellPrice"].ToString();
+                cboProductName.Text = Database.tbl.Rows[0]["CategoryName"].ToString();
+                string Pic = DGV.Cells[5].Value?.ToString()?.ToLower();
+                if (!Pic.Equals(""))
+                {
+                    PicPhoto.Image = Image.FromFile(Pic);
+                }
+                else
+                {
+                    PicPhoto.Image = null;
+                }
+            }
 
         }
         public override void update(DataGridView dg)
