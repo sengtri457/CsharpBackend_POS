@@ -293,5 +293,20 @@ namespace Group1_POS.Views
             category.Show();
             this.Hide();
         }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            SaleForm sale = new SaleForm();
+            sale.Show();
+            this.Hide();
+
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            SupplierForm supplier = new SupplierForm(); 
+            supplier.Show();
+            this.Hide();
+        }
     }
 }

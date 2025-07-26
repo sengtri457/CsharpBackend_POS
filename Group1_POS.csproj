@@ -49,6 +49,7 @@
     <Compile Include="models\Category\Category.cs" />
     <Compile Include="models\Method\HandleLogic.cs" />
     <Compile Include="models\Product\Product.cs" />
+    <Compile Include="models\Sale&amp;SaleDetail\Sale.cs" />
     <Compile Include="models\Stock\AddStock.cs" />
     <Compile Include="models\Supplier\Supplier.cs" />
     <Compile Include="models\User\User.cs" />
@@ -88,6 +89,18 @@
     </Compile>
     <Compile Include="Views\Product\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale\SaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sale\SaleForm.Designer.cs">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Userform.cs">
       <SubType>Form</SubType>
@@ -130,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Product\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sale\SaleForm.resx">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Supplier\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Userform.resx">
       <DependentUpon>Userform.cs</DependentUpon>
@@ -179,8 +198,6 @@
     <Content Include="Resources\user-people-svgrepo-com.png" />
     <Content Include="Resources\vaadin--stock.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="models\Sale&amp;SaleDetail\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

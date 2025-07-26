@@ -172,9 +172,9 @@ namespace Group1_POS.models.Product
                     this.Barcode = dr["Barcode"].ToString();
                     this.SellPrice = double.Parse(dr["SellPrice"].ToString());
                     this.QtyInstock = int.Parse(dr["UnitInstock"].ToString());
-                    this.Photo = dr["PhotoProduct"].ToString();
                     string CategoryName = dr["CategoryName"].ToString();
-                    object[] row = { this.Id, this.Name, this.Barcode, this.SellPrice, this.QtyInstock,this.Photo, CategoryName };
+                    this.Photo = dr["PhotoProduct"].ToString();
+                    object[] row = { this.Id, this.Name, this.Barcode, this.SellPrice, this.QtyInstock, CategoryName,this.Photo,  };
                     dg.Rows.Add(row);
                 }
             }
@@ -274,7 +274,9 @@ namespace Group1_POS.models.Product
                 txtBarcode.Text = Database.tbl.Rows[0]["Barcode"].ToString();
                 txtSellPrice.Text = Database.tbl.Rows[0]["SellPrice"].ToString();
                 cboProductName.Text = Database.tbl.Rows[0]["CategoryName"].ToString();
-                string Pic = DGV.Cells[5].Value?.ToString()?.ToLower();
+
+
+                string Pic = DGV.Cells[6].Value?.ToString()?.ToLower();
                 if (!Pic.Equals(""))
                 {
                     PicPhoto.Image = Image.FromFile(Pic);

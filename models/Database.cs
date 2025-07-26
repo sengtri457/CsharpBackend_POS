@@ -11,7 +11,7 @@ namespace Group1_POS.models
     internal class Database
     {
 
-        public static SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-QAFAUT7\SQLEXPRESS;Initial Catalog=POS_DB;Persist Security Info=True;User ID=sa;Password=123@;Encrypt=False");
+        public static SqlConnection con = new SqlConnection(@"Data Source=Ktri\SQLEXPRESS;Initial Catalog=POS_DB;Persist Security Info=True;User ID=sa;Password=123@;Encrypt=False");
         public static SqlCommand cmd = null;
         public static SqlDataAdapter ads = null;
         public static DataTable tbl = null;

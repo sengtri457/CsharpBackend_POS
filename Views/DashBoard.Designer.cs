@@ -33,6 +33,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSale = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.RoleLabel = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSuppliers = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,6 +74,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.btnSuppliers);
+            this.panel2.Controls.Add(this.btnSale);
             this.panel2.Controls.Add(this.btnCategory);
             this.panel2.Controls.Add(this.btnProduct);
             this.panel2.Controls.Add(this.RoleLabel);
@@ -89,6 +93,19 @@
             this.panel2.Size = new System.Drawing.Size(848, 1395);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnSale
+            // 
+            this.btnSale.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSale.ForeColor = System.Drawing.Color.White;
+            this.btnSale.Location = new System.Drawing.Point(138, 818);
+            this.btnSale.Name = "btnSale";
+            this.btnSale.Size = new System.Drawing.Size(202, 76);
+            this.btnSale.TabIndex = 39;
+            this.btnSale.Text = "Sale";
+            this.btnSale.UseVisualStyleBackColor = true;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // btnCategory
             // 
@@ -132,7 +149,7 @@
             this.LogoutBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Location = new System.Drawing.Point(138, 941);
+            this.LogoutBtn.Location = new System.Drawing.Point(138, 1036);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(202, 76);
             this.LogoutBtn.TabIndex = 35;
@@ -296,6 +313,19 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuppliers.ForeColor = System.Drawing.Color.White;
+            this.btnSuppliers.Location = new System.Drawing.Point(138, 917);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(202, 76);
+            this.btnSuppliers.TabIndex = 40;
+            this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = true;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -349,6 +379,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Button btnProduct;
         public System.Windows.Forms.Button btnCategory;
+        public System.Windows.Forms.Button btnSale;
+        public System.Windows.Forms.Button btnSuppliers;
     }
 }
 
