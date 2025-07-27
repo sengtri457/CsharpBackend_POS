@@ -49,6 +49,7 @@
     <Compile Include="models\Category\Category.cs" />
     <Compile Include="models\Method\HandleLogic.cs" />
     <Compile Include="models\Product\Product.cs" />
+    <Compile Include="models\Sale&amp;SaleDetail\SaleDetail.cs" />
     <Compile Include="models\Sale&amp;SaleDetail\Sale.cs" />
     <Compile Include="models\Stock\AddStock.cs" />
     <Compile Include="models\Supplier\Supplier.cs" />
@@ -89,6 +90,12 @@
     </Compile>
     <Compile Include="Views\Product\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale\SaleDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sale\SaleDetailForm.Designer.cs">
+      <DependentUpon>SaleDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Sale\SaleForm.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Product\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sale\SaleDetailForm.resx">
+      <DependentUpon>SaleDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sale\SaleForm.resx">
       <DependentUpon>SaleForm.cs</DependentUpon>

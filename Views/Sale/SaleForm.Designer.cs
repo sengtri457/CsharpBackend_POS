@@ -47,7 +47,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.TtitleRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.TotalAmount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -308,7 +308,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.TotalAmount);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -323,14 +323,14 @@
             this.panel2.Size = new System.Drawing.Size(633, 1106);
             this.panel2.TabIndex = 22;
             // 
-            // label5
+            // TotalAmount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(246, 236);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 42);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "00.00$";
+            this.TotalAmount.AutoSize = true;
+            this.TotalAmount.Location = new System.Drawing.Point(246, 236);
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.Size = new System.Drawing.Size(105, 42);
+            this.TotalAmount.TabIndex = 26;
+            this.TotalAmount.Text = "00.00$";
             // 
             // label4
             // 
@@ -487,7 +487,6 @@
         private System.Windows.Forms.Label TtitleRole;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgSale;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -500,5 +499,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        public System.Windows.Forms.Label TotalAmount;
     }
 }

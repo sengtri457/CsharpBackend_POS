@@ -11,8 +11,9 @@ using MyActionProduct = Group1_POS.models.Product.Product;
 
 namespace Group1_POS.models.Sale_SaleDetail
 {
-    internal class Sale : MyActionProduct
+    internal class SaleDetail : MyActionProduct
     {
+        public int SaleId { get; set; }
         private string _sql = "";
         public int Qty { get; set; }
         public  double CalculateAmount()
@@ -28,7 +29,6 @@ namespace Group1_POS.models.Sale_SaleDetail
                 this._sql = "SELECT * FROM tblProducts WHERE Barcode = @Barcode";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
                 Database.cmd.Parameters.AddWithValue("@Barcode", this.Barcode);
-
                 Database.ads = new SqlDataAdapter(Database.cmd);
                 Database.tbl = new DataTable();
                 Database.ads.Fill(Database.tbl);
@@ -79,6 +79,22 @@ namespace Group1_POS.models.Sale_SaleDetail
             {
                 MessageBox.Show($"Error ScanBarcode: {ex.Message}");
             }
+        }
+
+
+        public void CreateSaleDetail()
+        {
+            this._sql = "INSERT INTO tblSaleDetail(SaleId, ProductId, TotalAmount, Qty, Price, Amount)VALUES (@SaleId, @ProductId, @TotalAmount, @Qty, @Price, @Amount)";
+            Database.cmd = new SqlCommand(this._sql, Database.con);
+            Database.cmd.Parameters.AddWithValue("@SaleId", 1);
+            Database.cmd.Parameters.AddWithValue("@ProductId", this.Id);
+            Database.cmd.Parameters.AddWithValue("@Qty", this.Qty);
+            Database.cmd.Parameters.AddWithValue("@Price", this.SellPrice);
+            Database.cmd.Parameters.AddWithValue("@TotalAmount", this.Qty * this.SellPrice);
+            Database.cmd.Parameters.AddWithValue("@Amount", this.Qty * this.SellPrice);
+            Database.cmd.ExecuteNonQuery();
+            MessageBox.Show("Add SaleDetail Sucesss");
+
         }
 
     }

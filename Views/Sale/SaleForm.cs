@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyActionSale = Group1_POS.models.Sale_SaleDetail.Sale;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Group1_POS.Views
@@ -117,8 +118,9 @@ namespace Group1_POS.Views
         {
             if (e.KeyChar == (char) Keys.Enter)
             {
-                Sale sale = new Sale();
-                sale.ScanBarcode(dgSale, txtScan);
+                MyActionSale sale = new MyActionSale();
+               
+                sale.ScanBarcode(dgSale, txtScan,TotalAmount);
             }
         }
 

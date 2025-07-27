@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MyUser = Group1_POS.models.User;
 using System.Windows.Forms;
+using Group1_POS.models.Sale_SaleDetail;
+using Group1_POS.Views.Sale;
 
 namespace Group1_POS.Views
 {
@@ -306,6 +308,13 @@ namespace Group1_POS.Views
         {
             SupplierForm supplier = new SupplierForm(); 
             supplier.Show();
+            this.Hide();
+        }
+
+        private void btnSaleDetail_Click(object sender, EventArgs e)
+        {
+            SaleDetailForm saleDetailForm = new SaleDetailForm();   
+            saleDetailForm.Show();
             this.Hide();
         }
     }

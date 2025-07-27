@@ -33,6 +33,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSuppliers = new System.Windows.Forms.Button();
             this.btnSale = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -52,7 +53,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSuppliers = new System.Windows.Forms.Button();
+            this.btnSaleDetail = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -74,6 +75,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.btnSaleDetail);
             this.panel2.Controls.Add(this.btnSuppliers);
             this.panel2.Controls.Add(this.btnSale);
             this.panel2.Controls.Add(this.btnCategory);
@@ -93,6 +95,19 @@
             this.panel2.Size = new System.Drawing.Size(848, 1395);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuppliers.ForeColor = System.Drawing.Color.White;
+            this.btnSuppliers.Location = new System.Drawing.Point(138, 917);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(202, 76);
+            this.btnSuppliers.TabIndex = 40;
+            this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = true;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnSale
             // 
@@ -313,18 +328,18 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSuppliers
+            // btnSaleDetail
             // 
-            this.btnSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuppliers.ForeColor = System.Drawing.Color.White;
-            this.btnSuppliers.Location = new System.Drawing.Point(138, 917);
-            this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Size = new System.Drawing.Size(202, 76);
-            this.btnSuppliers.TabIndex = 40;
-            this.btnSuppliers.Text = "Suppliers";
-            this.btnSuppliers.UseVisualStyleBackColor = true;
-            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
+            this.btnSaleDetail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSaleDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaleDetail.ForeColor = System.Drawing.Color.White;
+            this.btnSaleDetail.Location = new System.Drawing.Point(346, 818);
+            this.btnSaleDetail.Name = "btnSaleDetail";
+            this.btnSaleDetail.Size = new System.Drawing.Size(202, 76);
+            this.btnSaleDetail.TabIndex = 41;
+            this.btnSaleDetail.Text = "SaleDetail";
+            this.btnSaleDetail.UseVisualStyleBackColor = true;
+            this.btnSaleDetail.Click += new System.EventHandler(this.btnSaleDetail_Click);
             // 
             // DashBoard
             // 
@@ -381,6 +396,7 @@
         public System.Windows.Forms.Button btnCategory;
         public System.Windows.Forms.Button btnSale;
         public System.Windows.Forms.Button btnSuppliers;
+        public System.Windows.Forms.Button btnSaleDetail;
     }
 }
 

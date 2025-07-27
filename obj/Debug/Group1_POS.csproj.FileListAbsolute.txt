@@ -17,3 +17,4 @@ D:\c#\Group1_POS\obj\Debug\Group1_POS.exe
 D:\c#\Group1_POS\obj\Debug\Group1_POS.pdb
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.SaleForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.SupplierForm.resources
+D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.Sale.SaleDetailForm.resources
