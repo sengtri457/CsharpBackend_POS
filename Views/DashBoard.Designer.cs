@@ -33,6 +33,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSuppliers = new System.Windows.Forms.Button();
             this.btnSale = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSuppliers = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +73,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.panel2.Controls.Add(this.btnSuppliers);
             this.panel2.Controls.Add(this.btnSale);
             this.panel2.Controls.Add(this.btnCategory);
@@ -94,12 +94,25 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuppliers.ForeColor = System.Drawing.Color.White;
+            this.btnSuppliers.Location = new System.Drawing.Point(244, 917);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(202, 76);
+            this.btnSuppliers.TabIndex = 40;
+            this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = true;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
+            // 
             // btnSale
             // 
-            this.btnSale.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSale.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
             this.btnSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSale.ForeColor = System.Drawing.Color.White;
-            this.btnSale.Location = new System.Drawing.Point(138, 818);
+            this.btnSale.Location = new System.Drawing.Point(244, 818);
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(202, 76);
             this.btnSale.TabIndex = 39;
@@ -109,10 +122,10 @@
             // 
             // btnCategory
             // 
-            this.btnCategory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCategory.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
             this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategory.ForeColor = System.Drawing.Color.White;
-            this.btnCategory.Location = new System.Drawing.Point(138, 716);
+            this.btnCategory.Location = new System.Drawing.Point(244, 711);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(202, 76);
             this.btnCategory.TabIndex = 38;
@@ -122,10 +135,10 @@
             // 
             // btnProduct
             // 
-            this.btnProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnProduct.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProduct.ForeColor = System.Drawing.Color.White;
-            this.btnProduct.Location = new System.Drawing.Point(138, 599);
+            this.btnProduct.Location = new System.Drawing.Point(244, 594);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(202, 76);
             this.btnProduct.TabIndex = 37;
@@ -136,7 +149,7 @@
             // RoleLabel
             // 
             this.RoleLabel.AutoSize = true;
-            this.RoleLabel.Location = new System.Drawing.Point(129, 336);
+            this.RoleLabel.Location = new System.Drawing.Point(235, 331);
             this.RoleLabel.Name = "RoleLabel";
             this.RoleLabel.Size = new System.Drawing.Size(94, 50);
             this.RoleLabel.TabIndex = 36;
@@ -145,11 +158,11 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.BackColor = System.Drawing.Color.Red;
-            this.LogoutBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.LogoutBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.LogoutBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
             this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Location = new System.Drawing.Point(138, 1036);
+            this.LogoutBtn.Location = new System.Drawing.Point(244, 1036);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(202, 76);
             this.LogoutBtn.TabIndex = 35;
@@ -160,7 +173,7 @@
             // AdminLabel
             // 
             this.AdminLabel.AutoSize = true;
-            this.AdminLabel.Location = new System.Drawing.Point(120, 280);
+            this.AdminLabel.Location = new System.Drawing.Point(226, 275);
             this.AdminLabel.Name = "AdminLabel";
             this.AdminLabel.Size = new System.Drawing.Size(165, 50);
             this.AdminLabel.TabIndex = 34;
@@ -169,7 +182,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(138, 32);
+            this.pictureBox5.Location = new System.Drawing.Point(244, 27);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(229, 222);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,10 +192,10 @@
             // UserRoleBtn
             // 
             this.UserRoleBtn.Enabled = false;
-            this.UserRoleBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.UserRoleBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
             this.UserRoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserRoleBtn.ForeColor = System.Drawing.Color.White;
-            this.UserRoleBtn.Location = new System.Drawing.Point(138, 507);
+            this.UserRoleBtn.Location = new System.Drawing.Point(244, 502);
             this.UserRoleBtn.Name = "UserRoleBtn";
             this.UserRoleBtn.Size = new System.Drawing.Size(202, 76);
             this.UserRoleBtn.TabIndex = 24;
@@ -192,13 +205,13 @@
             // 
             // UserBtn
             // 
-            this.UserBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.UserBtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.UserBtn.Enabled = false;
             this.UserBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.UserBtn.FlatAppearance.BorderSize = 0;
             this.UserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserBtn.ForeColor = System.Drawing.Color.White;
-            this.UserBtn.Location = new System.Drawing.Point(138, 425);
+            this.UserBtn.Location = new System.Drawing.Point(244, 420);
             this.UserBtn.Name = "UserBtn";
             this.UserBtn.Size = new System.Drawing.Size(202, 76);
             this.UserBtn.TabIndex = 23;
@@ -217,6 +230,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // panel5
             // 
@@ -275,7 +289,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel4.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Location = new System.Drawing.Point(907, 142);
             this.panel4.Name = "panel4";
@@ -295,7 +309,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel3.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(1430, 142);
             this.panel3.Name = "panel3";
@@ -312,19 +326,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnSuppliers
-            // 
-            this.btnSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuppliers.ForeColor = System.Drawing.Color.White;
-            this.btnSuppliers.Location = new System.Drawing.Point(138, 917);
-            this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Size = new System.Drawing.Size(202, 76);
-            this.btnSuppliers.TabIndex = 40;
-            this.btnSuppliers.Text = "Suppliers";
-            this.btnSuppliers.UseVisualStyleBackColor = true;
-            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // DashBoard
             // 
