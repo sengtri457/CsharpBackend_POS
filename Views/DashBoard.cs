@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using MyUser = Group1_POS.models.User;
 using System.Windows.Forms;
 using Group1_POS.models.Sale_SaleDetail;
-using Group1_POS.Views.Sale;
+using Group1_POS.models.Product;
+
 
 namespace Group1_POS.Views
 {
@@ -243,6 +244,9 @@ namespace Group1_POS.Views
             {
                 UserBtn.Enabled = false;
             }
+            Product pro = new Product();
+            pro.getDataGrid(dg: dgProduct);
+            pro.TranferToControls(dg: dgProduct, txtProductName, txtBarcode, txtSellPrice, cboProductName, PicPhoto);
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -265,8 +269,10 @@ namespace Group1_POS.Views
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
             LoginForm form = new LoginForm();
+            DashBoard das = new DashBoard();
             form.Show();
             this.Hide();
+            das.Hide();
 
         }
 
@@ -313,9 +319,19 @@ namespace Group1_POS.Views
 
         private void btnSaleDetail_Click(object sender, EventArgs e)
         {
-            SaleDetailForm saleDetailForm = new SaleDetailForm();   
-            saleDetailForm.Show();
-            this.Hide();
+            
+        }
+
+        private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgProduct_DoubleClick(object sender, EventArgs e)
+        {
+            Product pro = new Product();
+
+            pro.TranferToControls(dg: dgProduct, txtProductName, txtBarcode, txtSellPrice, cboProductName, PicPhoto);
         }
     }
 }

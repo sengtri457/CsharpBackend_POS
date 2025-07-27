@@ -52,41 +52,19 @@ namespace Group1_POS.Views
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //if (HandleLogic.EmptytextBox(txtProductId))
-            //{
-            //    return;
-            //}
-            //product = new Product();
-            //product.Name = txtProductId.Text.Trim();
-            //product.Barcode = txtProductName.Text.Trim();
-            //product.SellPrice = double.Parse(txtQty.Text.Trim());
-            //product.Photo = Product.PathPhoto;
-            //product.CategoryId = product.GetSupplierId(cboProductName);
-            //product.update(dg: dgProduct);
-            //HandleLogic.ClearTextBox(txtProductId, txtProductName, txtQty);
-            //HandleLogic.ClearComboBox(cboProductName);
-            //PicPhoto.Image = null;
-            //Product.PathPhoto = "";
-            //txtProductId.Focus();
+            
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //HandleLogic.ClearTextBox(txtProductId);
-            //product = new Product();
-            //product.deleted(dg: dgProduct);
-            //HandleLogic.ClearTextBox(txtProductId);
+           
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //HandleLogic.ClearTextBox(txtProductId);
-            //user = new User();
-            //user.UserName = txtProductId.Text.Trim();
-            //user.SearchData(dg: dgProduct);
-            //HandleLogic.ClearTextBox(txtProductId);
+           
 
         }
 
@@ -113,12 +91,6 @@ namespace Group1_POS.Views
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if(e.KeyChar == (char)13)
-            //{
-            //    Product product = new Product();
-            //product.Name = txtSearch.Text.Trim();
-            //    product.SearchData(dg: dgProduct);
-            //}
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -128,18 +100,6 @@ namespace Group1_POS.Views
 
         private void btnBrower_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog ofd = new OpenFileDialog();
-            //ofd.Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg;*.jpeg;*.png";
-
-            //if (ofd.ShowDialog() == DialogResult.OK)
-            //{
-            //    // Show selected image in PictureBox
-            //    PicPhoto.Image = Image.FromFile(ofd.FileName);
-            //    PicPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //    // ✅ Store image path for later use
-            //    Product.PathPhoto = ofd.FileName;
-            //}
 
         }
 
@@ -154,8 +114,7 @@ namespace Group1_POS.Views
 
         private void dgProduct_DoubleClick(object sender, EventArgs e)
         {
-            //product = new Product();
-            //product.TranferToControls(dg: dgProduct, txtProductId, txtProductName, txtQty, cboProductName,PicPhoto);
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)

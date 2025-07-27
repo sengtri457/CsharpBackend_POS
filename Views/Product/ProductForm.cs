@@ -174,5 +174,10 @@ namespace Group1_POS.Views
             stock.TranserDataToControl(dgProduct, addStockForm.txtProductId, addStockForm.txtProductName);
             addStockForm.ShowDialog();
         }
+
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
