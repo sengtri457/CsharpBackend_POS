@@ -40,7 +40,7 @@ namespace Group1_POS.models.Role
             return false;
 
         }
-        public override void createRole()
+        public override void createRole(DataGridView dg)
         {
           try
             {
@@ -99,27 +99,26 @@ namespace Group1_POS.models.Role
             {
                 this._sql = "SELECT * FROM tblRole WHERE RoleName LIKE @RoleName";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
-                Database.cmd.Parameters.AddWithValue("@RoleName", $"%{this.RoleName}%");
+                Database.cmd.Parameters.AddWithValue("@RoleName", "%" + this.RoleName + "%");
 
                 Database.ads = new SqlDataAdapter(Database.cmd);
                 Database.tbl = new DataTable();
                 Database.ads.Fill(Database.tbl);
-
                 dg.Rows.Clear();
+
                 foreach (DataRow dr in Database.tbl.Rows)
                 {
-                    this.Id = int.Parse(dr["ID"].ToString());
+                    this.Id = Convert.ToInt32(dr["ID"]);
                     this.RoleName = dr["RoleName"].ToString();
                     object[] row = { this.Id, this.RoleName };
                     dg.Rows.Add(row);
                 }
-                
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error Search Data: {ex.Message}");
             }
+
         }
 
 

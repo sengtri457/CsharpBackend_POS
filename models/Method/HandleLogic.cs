@@ -21,7 +21,7 @@ namespace Group1_POS.models.Method
             }
             return false;
         }
-        public static void ClearTextBox(params TextBox[] textBoxes)
+        public static void ClearTextBox(params TextBox[] textBoxes )
         {
             foreach (var textBox in textBoxes)
             {
@@ -31,6 +31,16 @@ namespace Group1_POS.models.Method
                 }
             }
 
+        }
+        public static void ClearComboBox(params ComboBox[] comboBoxes)
+        {
+            foreach (var combo in comboBoxes)
+            {
+                if (!combo.Equals("") && combo.SelectedIndex != -1)
+                {
+                    combo.SelectedIndex = -1;
+                }
+            }
         }
     }
 }

@@ -46,8 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Category\Category.cs" />
     <Compile Include="models\Method\HandleLogic.cs" />
+    <Compile Include="models\Product\Product.cs" />
+    <Compile Include="models\Sale&amp;SaleDetail\Sale.cs" />
+    <Compile Include="models\Stock\AddStock.cs" />
+    <Compile Include="models\Supplier\Supplier.cs" />
     <Compile Include="models\User\User.cs" />
+    <Compile Include="Views\AddStock\AddStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddStock\AddStockForm.Designer.cs">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Category\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +84,24 @@
     <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Product\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Product\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale\SaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sale\SaleForm.Designer.cs">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Userform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +114,18 @@
     <Compile Include="Views\RoleForm.Designer.cs">
       <DependentUpon>RoleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserRole\UserRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserRole\UserRoleForm.Designer.cs">
+      <DependentUpon>UserRoleForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\AddStock\AddStockForm.resx">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Category\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,11 +141,23 @@
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Product\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sale\SaleForm.resx">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Supplier\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Userform.resx">
       <DependentUpon>Userform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RoleForm.resx">
       <DependentUpon>RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserRole\UserRoleForm.resx">
+      <DependentUpon>UserRoleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +171,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\account-avatar-profile-user-11-svgrepo-com.png" />
+    <Content Include="Resources\Barcode-amico.png" />
+    <Content Include="Resources\Barcode-bro.png" />
+    <Content Include="Resources\carbon--collapse-categories.png" />
+    <Content Include="Resources\carbon--scis-transparent-supply.png" />
+    <Content Include="Resources\carbon--user-role.png" />
+    <Content Include="Resources\Checklist-pana.png" />
+    <Content Include="Resources\close-button-svgrepo-com.png" />
+    <Content Include="Resources\Computer login-rafiki.png" />
+    <Content Include="Resources\eos-icons--role-binding-outlined.png" />
+    <Content Include="Resources\fluent--home-24-regular %281%29.png" />
+    <Content Include="Resources\ix--product.png" />
+    <Content Include="Resources\mdi--cart-sale.png" />
+    <Content Include="Resources\mdi--logout.png" />
+    <Content Include="Resources\Novelist writing-bro.png" />
+    <Content Include="Resources\padnote-check-box-svgrepo-com.png" />
+    <Content Include="Resources\qlementine-icons--user-16.png" />
+    <Content Include="Resources\shopping-svgrepo-com %281%29.png" />
+    <Content Include="Resources\shopping-svgrepo-com.png" />
+    <Content Include="Resources\stock-svgrepo-com.png" />
+    <Content Include="Resources\Taking notes-rafiki.png" />
+    <Content Include="Resources\uil--setting.png" />
+    <Content Include="Resources\user-people-svgrepo-com.png" />
+    <Content Include="Resources\vaadin--stock.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
