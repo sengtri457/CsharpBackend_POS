@@ -121,5 +121,12 @@ namespace Group1_POS.Views
                 sale.ScanBarcode(dgSale, txtScan);
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            DashBoard main = new DashBoard();
+            main.Show();
+            this.Hide();
+        }
     }
 }
