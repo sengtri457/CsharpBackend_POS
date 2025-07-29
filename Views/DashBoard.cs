@@ -244,9 +244,7 @@ namespace Group1_POS.Views
             {
                 UserBtn.Enabled = false;
             }
-            Product pro = new Product();
-            pro.getDataGrid(dg: dgProduct);
-            pro.TranferToControls(dg: dgProduct, txtProductName, txtBarcode, txtSellPrice, cboProductName, PicPhoto);
+
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -278,9 +276,11 @@ namespace Group1_POS.Views
 
         private void LogoutBtn_Click_1(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+            LoginForm form = new LoginForm();
+            DashBoard das = new DashBoard();
+            form.Show();
             this.Hide();
+            das.Hide();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -329,9 +329,33 @@ namespace Group1_POS.Views
 
         private void dgProduct_DoubleClick(object sender, EventArgs e)
         {
-            Product pro = new Product();
 
-            pro.TranferToControls(dg: dgProduct, txtProductName, txtBarcode, txtSellPrice, cboProductName, PicPhoto);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnorder_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();
+            productForm.Show();
+            this.Hide();
+        }
+
+        private void ProductLabel_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();    
+            productForm.Show();
+            this.Hide();
+        }
+
+        private void CatLabel_Click(object sender, EventArgs e)
+        {
+            CategoryForm categoryForm = new CategoryForm();
+            categoryForm.Show();
+            this.Hide();
         }
     }
 }
