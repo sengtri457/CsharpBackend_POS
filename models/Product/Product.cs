@@ -30,8 +30,29 @@ namespace Group1_POS.models.Product
         public DateTime UpdateAt { get; set; }
         public static string PathPhoto { get; set; }
         public string Photo { get; set; }
+        public static double MaxStock { get; set; } = 10;
+        public void AlertProduct(DataGridView dg)
+        {
+            try
+            {
+                this._sql = "select * from tblProducts where UnitInstock < @MaxStock";
+                Database.cmd = new SqlCommand(this._sql, Database.con);
+                Database.cmd.Parameters.AddWithValue("@MaxStock", Product.MaxStock);
 
-
+                Database.cmd.ExecuteNonQuery();
+                Database.ads = new SqlDataAdapter(Database.cmd);
+                Database.tbl = new DataTable();
+                Database.ads.Fill(Database.tbl);
+                if(Database.tbl.Rows.Count > 0)
+                {
+                    getDataGrid(dg);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Alert:{ex.Message}");
+            }
+        }
         public bool IsCheckDuplicate(string columnName, object Values, string MessageCheck)
         {
             try
@@ -71,6 +92,7 @@ namespace Group1_POS.models.Product
 
                 this._sql = "select Name from tblCategory";
                 Database.cmd = new SqlCommand(this._sql, Database.con);
+
                 Database.cmd.ExecuteNonQuery();
                 Database.ads = new SqlDataAdapter(Database.cmd);
                 Database.tbl = new DataTable();

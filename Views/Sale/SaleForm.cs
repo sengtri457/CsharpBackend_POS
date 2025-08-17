@@ -130,5 +130,47 @@ namespace Group1_POS.Views
             main.Show();
             this.Hide();
         }
+
+        private void txtCashReceive_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (HandleLogic.EmptytextBox(txtCashReceive))
+                {
+                    return;
+                }
+                double totalAmount, cashReceive, cashReturn = 0;
+                totalAmount = double.Parse(TotalAmount.Text);
+                cashReceive = double.Parse(txtCashReceive.Text.Trim());
+                if(cashReceive >= totalAmount)
+                {
+                    cashReturn = cashReceive - totalAmount;
+                    lblcashReceive.Text = cashReturn.ToString("#,##0.00");
+                }
+                else
+                {
+                    MessageBox.Show("User Should Be Give Enough Money To Pay");
+                    txtCashReceive.Clear();
+                    txtCashReceive.Focus();
+                }
+            }
+        }
+
+        private void txtCashReceive_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            Sale sale = new Sale();
+            sale.CommitData(dgSale,TotalAmount);
+            txtCashReceive.Clear();
+            txtCashReceive.Focus();
+            TotalAmount.Text = "00.00";
+            lblcashReceive.Text = "00.00";
+
+        }
     }
 }

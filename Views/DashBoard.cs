@@ -244,6 +244,8 @@ namespace Group1_POS.Views
             {
                 UserBtn.Enabled = false;
             }
+            Product product = new Product();
+            product.AlertProduct(dg: dgProductShow);
 
         }
 
@@ -323,11 +325,6 @@ namespace Group1_POS.Views
         }
 
         private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgProduct_DoubleClick(object sender, EventArgs e)
         {
 
         }

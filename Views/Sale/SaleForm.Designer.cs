@@ -38,7 +38,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.dgSale = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.txtScan = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,18 +55,12 @@
             this.TtitleRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TotalAmount = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblcashReceive = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCashReceive = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPay = new System.Windows.Forms.Button();
             this.addStockMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -181,6 +182,23 @@
             this.panel1.Size = new System.Drawing.Size(1946, 1106);
             this.panel1.TabIndex = 21;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.Location = new System.Drawing.Point(580, 141);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(139, 52);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // dgSale
             // 
             this.dgSale.AllowUserToAddRows = false;
@@ -207,6 +225,54 @@
             this.dgSale.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSale.Size = new System.Drawing.Size(1946, 870);
             this.dgSale.TabIndex = 20;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ProductId";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Barcode";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Description";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Qty";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Price";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amount";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
             // 
             // button2
             // 
@@ -308,11 +374,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnPay);
             this.panel2.Controls.Add(this.TotalAmount);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lblcashReceive);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCashReceive);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -332,14 +399,14 @@
             this.TotalAmount.TabIndex = 26;
             this.TotalAmount.Text = "00.00$";
             // 
-            // label4
+            // lblcashReceive
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(246, 373);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 42);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "00.00$";
+            this.lblcashReceive.AutoSize = true;
+            this.lblcashReceive.Location = new System.Drawing.Point(246, 373);
+            this.lblcashReceive.Name = "lblcashReceive";
+            this.lblcashReceive.Size = new System.Drawing.Size(105, 42);
+            this.lblcashReceive.TabIndex = 25;
+            this.lblcashReceive.Text = "00.00$";
             // 
             // label3
             // 
@@ -359,12 +426,14 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Cash Return $:";
             // 
-            // textBox1
+            // txtCashReceive
             // 
-            this.textBox1.Location = new System.Drawing.Point(253, 307);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 43);
-            this.textBox1.TabIndex = 22;
+            this.txtCashReceive.Location = new System.Drawing.Point(253, 307);
+            this.txtCashReceive.Name = "txtCashReceive";
+            this.txtCashReceive.Size = new System.Drawing.Size(227, 43);
+            this.txtCashReceive.TabIndex = 22;
+            this.txtCashReceive.TextChanged += new System.EventHandler(this.txtCashReceive_TextChanged);
+            this.txtCashReceive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCashReceive_KeyPress);
             // 
             // label1
             // 
@@ -375,70 +444,22 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Cash Recieve $:";
             // 
-            // btnBack
+            // btnPay
             // 
-            this.btnBack.BackColor = System.Drawing.Color.White;
-            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBack.Location = new System.Drawing.Point(580, 141);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(139, 52);
-            this.btnBack.TabIndex = 21;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ProductId";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Barcode";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 120;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Description";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Qty";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 120;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Price";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Amount";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
+            this.btnPay.BackColor = System.Drawing.Color.White;
+            this.btnPay.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnPay.FlatAppearance.BorderSize = 0;
+            this.btnPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPay.Location = new System.Drawing.Point(36, 434);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(211, 52);
+            this.btnPay.TabIndex = 27;
+            this.btnPay.Text = "Payment";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // SaleForm
             // 
@@ -487,10 +508,10 @@
         private System.Windows.Forms.Label TtitleRole;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgSale;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblcashReceive;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCashReceive;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -500,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         public System.Windows.Forms.Label TotalAmount;
+        private System.Windows.Forms.Button btnPay;
     }
 }
