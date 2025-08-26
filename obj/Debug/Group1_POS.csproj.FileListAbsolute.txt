@@ -17,3 +17,9 @@ D:\c#\Group1_POS\obj\Debug\Group1_POS.exe
 D:\c#\Group1_POS\obj\Debug\Group1_POS.pdb
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.SaleForm.resources
 D:\c#\Group1_POS\obj\Debug\Group1_POS.Views.SupplierForm.resources
+D:\c#\Group1_POS\bin\Debug\Reports\Report_Sale.rdlc
+D:\c#\Group1_POS\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\c#\Group1_POS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\c#\Group1_POS\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+D:\c#\Group1_POS\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\c#\Group1_POS\obj\Debug\Group1_POS.csproj.Up2Date

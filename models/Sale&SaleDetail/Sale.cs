@@ -1,4 +1,5 @@
 ﻿using Group1_POS.models.Product;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,6 +19,8 @@ namespace Group1_POS.models.Sale_SaleDetail
 
         private int SaleId;
 
+        public double CashRecieve { get; set; }
+        public double CashReturn { get; set; }
 
 
 
@@ -125,6 +128,7 @@ namespace Group1_POS.models.Sale_SaleDetail
                 }
 
                 sqlTransaction.Commit();
+                this.PrintSaleReport(SaleId);
                 MessageBox.Show("Sale Successful");
                 dgSale.Rows.Clear();
                 
@@ -136,6 +140,51 @@ namespace Group1_POS.models.Sale_SaleDetail
                 sqlTransaction?.Rollback();
             }
         }
+
+
+        public void PrintSaleReport(int id)
+        {
+            try
+            {
+                this._sql = "select * from View_Sale_Report where SaleId=@SaleId";
+                Database.cmd = new SqlCommand(this._sql, Database.con);
+                Database.cmd.Parameters.AddWithValue("@SaleId", id);
+                Database.cmd.ExecuteNonQuery();
+                Database.ads = new SqlDataAdapter(Database.cmd);
+                Database.tbl = new DataTable();
+                Database.ads.Fill(Database.tbl);
+
+                ReportDataSource rds = new ReportDataSource("DataSet_Report_Sale",
+                                                                                               Database.tbl);
+                LocalReport rpt = new LocalReport();
+                rpt.ReportPath = Application.StartupPath + @"\Reports\Report_Sale.rdlc";
+
+                // 5. Set parameters
+                ReportParameter[] parameters = new ReportParameter[]
+                {
+                    new ReportParameter("CashReceive",CashRecieve.ToString()),
+                    new ReportParameter("CashReturn",CashReturn.ToString())
+                };
+
+                rpt.SetParameters(parameters);
+                rpt.DataSources.Clear();
+                rpt.DataSources.Add(rds);
+
+
+                PrintReport objPrint = new PrintReport();
+                objPrint.Export(rpt);
+                objPrint.m_currentPageIndex = 0;
+                objPrint.Print();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Report_Sale: {ex.Message}");
+            }
+        }
+
+
+
         public double CalculateAmount()
         {
             return this.Qty * this.SellPrice;

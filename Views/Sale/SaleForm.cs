@@ -166,6 +166,9 @@ namespace Group1_POS.Views
         {
             Sale sale = new Sale();
             sale.CommitData(dgSale,TotalAmount);
+
+            sale.CashRecieve = double.Parse(txtCashReceive.Text.Trim());
+            sale.CashReturn = double.Parse(lblcashReceive.Text.Trim()); 
             txtCashReceive.Clear();
             txtCashReceive.Focus();
             TotalAmount.Text = "00.00";
