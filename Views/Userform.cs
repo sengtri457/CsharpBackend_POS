@@ -47,8 +47,10 @@ namespace Group1_POS.Views
             {
                 user.Status = false;
             }
-            user.createRole();
+            user.RoleId = user.GetRoleId(cboRoleName);
+            user.createRole(dg: dgUser);
             HandleLogic.ClearTextBox(txtUserName,txtEmail,textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
             
         }
 
@@ -66,43 +68,75 @@ namespace Group1_POS.Views
             {
                 return;
             }
-            role = new Role();
-            role.RoleName = txtUserName.Text.Trim();
-            role.update(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            user = new User();
+            user.UserName = txtUserName.Text.Trim();
+            user.Gender = cboGender.Text.Trim();
+            user.Email = txtEmail.Text.Trim();
+            user.Password = textPass.Text.Trim();
+            if (rTrue.Checked)
+            {
+                user.Status = true;
+            }
+            else
+            {
+                user.Status = false;
+            }
+            user.RoleId = user.GetRoleId(cboRoleName);
+            user.update(dg: dgUser);
+            HandleLogic.ClearTextBox(txtUserName,txtEmail,textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            txtUserName.Focus();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtUserName);
-            role = new Role();
-            role.deleted(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            user = new User();
+            user.deleted(dg: dgUser);
+            HandleLogic.ClearTextBox(txtUserName, txtEmail, textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            txtUserName.Focus();
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            HandleLogic.ClearTextBox(txtUserName);
-            role = new Role();
-            role.RoleName = txtUserName.Text.Trim();
-            role.SearchData(dg: dgUser);
-            HandleLogic.ClearTextBox(txtUserName);
+            user = new User();
+            user.UserName = txtUserName.Text.Trim();
+            user.SearchData(dg: dgUser);
+            HandleLogic.ClearTextBox(txtUserName, txtEmail, textPass);
+            HandleLogic.ClearComboBox(cboGender, cboRoleName);
+            txtUserName.Focus();
 
         }
 
         private void dgRole_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            role = new Role();
-            role.TranferToControls(dg: dgUser, txtUserName);
+            user = new User();
+            user.TranferToControls(dg: dgUser, txtUserName ,  cboGender,  txtEmail, textPass, cboRoleName, rTrue, rFalse);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            role = new Role();
-            role.SearchData(dg: dgUser);
             
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            DashBoard main = new DashBoard();
+            main.Show();
+            this.Hide();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                User user = new User();
+            user.UserName = txtSearch.Text.Trim();
+                user.SearchData(dg: dgUser);
+            }
         }
     }
 }

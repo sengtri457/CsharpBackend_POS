@@ -10,7 +10,7 @@ namespace Group1_POS.models.Interface
     internal abstract class Action : IAction
     {
 
-        public virtual void createRole()
+        public virtual void createRole(DataGridView dg)
         {
             throw new NotImplementedException();
         }

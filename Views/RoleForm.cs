@@ -1,5 +1,6 @@
 ﻿using Group1_POS.models.Method;
 using Group1_POS.models.Role;
+using Group1_POS.models.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace Group1_POS.Views
             }
             role = new Role();
             role.RoleName = txtRole.Text.Trim();
-            role.createRole();
+            role.createRole(dg:dgRole);
             HandleLogic.ClearTextBox(txtRole);
         }
 
@@ -87,6 +88,27 @@ namespace Group1_POS.Views
             role = new Role();
             role.SearchData(dg: dgRole);
             
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            DashBoard main = new DashBoard();
+            main.Show();
+            this.Hide();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            if (e.KeyChar == (char)13)
+            {
+                 role = new Role();
+                role.RoleName = txtSearchRole.Text.Trim();
+                role.SearchData(dg: dgRole);
+            }
+
         }
     }
 }

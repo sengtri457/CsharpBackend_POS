@@ -28,9 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboRoleName = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rFalse = new System.Windows.Forms.RadioButton();
+            this.rTrue = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboGender = new System.Windows.Forms.ComboBox();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -38,20 +51,6 @@
             this.TtitleRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgUser = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textPass = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboGender = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rTrue = new System.Windows.Forms.RadioButton();
-            this.rFalse = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cboRoleName = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,13 +59,20 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cboRoleName);
             this.panel1.Controls.Add(this.label6);
@@ -79,18 +85,154 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnCreate);
             this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.txtRoleTitle);
             this.panel1.Controls.Add(this.TtitleRole);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Location = new System.Drawing.Point(23, 26);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 758);
+            this.panel1.Size = new System.Drawing.Size(748, 1106);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(225, 680);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 52);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(520, -13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 1119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 433);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(150, 42);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "RoleName";
+            // 
+            // cboRoleName
+            // 
+            this.cboRoleName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoleName.FormattingEnabled = true;
+            this.cboRoleName.Location = new System.Drawing.Point(172, 425);
+            this.cboRoleName.Name = "cboRoleName";
+            this.cboRoleName.Size = new System.Drawing.Size(311, 50);
+            this.cboRoleName.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 373);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 42);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Status";
+            // 
+            // rFalse
+            // 
+            this.rFalse.AutoSize = true;
+            this.rFalse.Location = new System.Drawing.Point(277, 373);
+            this.rFalse.Name = "rFalse";
+            this.rFalse.Size = new System.Drawing.Size(110, 46);
+            this.rFalse.TabIndex = 14;
+            this.rFalse.Text = "False";
+            this.rFalse.UseVisualStyleBackColor = true;
+            // 
+            // rTrue
+            // 
+            this.rTrue.AutoSize = true;
+            this.rTrue.Checked = true;
+            this.rTrue.Location = new System.Drawing.Point(170, 373);
+            this.rTrue.Name = "rTrue";
+            this.rTrue.Size = new System.Drawing.Size(101, 46);
+            this.rTrue.TabIndex = 13;
+            this.rTrue.TabStop = true;
+            this.rTrue.Text = "True";
+            this.rTrue.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 172);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 42);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Gender";
+            // 
+            // cboGender
+            // 
+            this.cboGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboGender.FormattingEnabled = true;
+            this.cboGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cboGender.Location = new System.Drawing.Point(172, 164);
+            this.cboGender.Name = "cboGender";
+            this.cboGender.Size = new System.Drawing.Size(311, 50);
+            this.cboGender.TabIndex = 11;
+            // 
+            // textPass
+            // 
+            this.textPass.Location = new System.Drawing.Point(172, 304);
+            this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
+            this.textPass.Size = new System.Drawing.Size(311, 43);
+            this.textPass.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 42);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(172, 236);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(311, 43);
+            this.txtEmail.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 42);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Password";
             // 
             // btnDelete
             // 
@@ -108,23 +250,6 @@
             this.btnDelete.Text = "Deleted";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSearch.Location = new System.Drawing.Point(225, 680);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(139, 52);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnUpdate
             // 
@@ -181,24 +306,26 @@
             // 
             this.TtitleRole.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TtitleRole.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TtitleRole.Location = new System.Drawing.Point(3, 0);
+            this.TtitleRole.Location = new System.Drawing.Point(40, 9);
             this.TtitleRole.Name = "TtitleRole";
             this.TtitleRole.Size = new System.Drawing.Size(429, 57);
             this.TtitleRole.TabIndex = 0;
-            this.TtitleRole.Text = "Welcome Role Feild";
+            this.TtitleRole.Text = "Welcome User Feild";
             this.TtitleRole.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dgUser);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(545, 26);
+            this.panel2.Location = new System.Drawing.Point(748, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1758, 758);
+            this.panel2.Size = new System.Drawing.Size(1198, 1106);
             this.panel2.TabIndex = 7;
             // 
             // dgUser
@@ -216,154 +343,20 @@
             this.Column5,
             this.Status,
             this.Column7,
-            this.CreateBy});
+            this.CreateBy,
+            this.Column9});
             this.dgUser.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgUser.GridColor = System.Drawing.Color.Black;
-            this.dgUser.Location = new System.Drawing.Point(0, 167);
+            this.dgUser.Location = new System.Drawing.Point(0, 236);
             this.dgUser.MultiSelect = false;
             this.dgUser.Name = "dgUser";
             this.dgUser.ReadOnly = true;
             this.dgUser.RowHeadersWidth = 62;
             this.dgUser.RowTemplate.Height = 28;
             this.dgUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUser.Size = new System.Drawing.Size(1758, 591);
+            this.dgUser.Size = new System.Drawing.Size(1198, 870);
             this.dgUser.TabIndex = 3;
             this.dgUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRole_CellDoubleClick);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(193, 102);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(355, 43);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(26, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Search By";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(429, 57);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Display Role";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(172, 236);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(311, 43);
-            this.txtEmail.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 42);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Password";
-            // 
-            // textPass
-            // 
-            this.textPass.Location = new System.Drawing.Point(172, 304);
-            this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(311, 43);
-            this.textPass.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 42);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Email";
-            // 
-            // cboGender
-            // 
-            this.cboGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cboGender.Location = new System.Drawing.Point(172, 164);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(192, 50);
-            this.cboGender.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 42);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Gender";
-            // 
-            // rTrue
-            // 
-            this.rTrue.AutoSize = true;
-            this.rTrue.Checked = true;
-            this.rTrue.Location = new System.Drawing.Point(170, 373);
-            this.rTrue.Name = "rTrue";
-            this.rTrue.Size = new System.Drawing.Size(101, 46);
-            this.rTrue.TabIndex = 13;
-            this.rTrue.TabStop = true;
-            this.rTrue.Text = "True";
-            this.rTrue.UseVisualStyleBackColor = true;
-            // 
-            // rFalse
-            // 
-            this.rFalse.AutoSize = true;
-            this.rFalse.Location = new System.Drawing.Point(277, 373);
-            this.rFalse.Name = "rFalse";
-            this.rFalse.Size = new System.Drawing.Size(110, 46);
-            this.rFalse.TabIndex = 14;
-            this.rFalse.Text = "False";
-            this.rFalse.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 373);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 42);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Status";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 433);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 42);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "RoleName";
-            // 
-            // cboRoleName
-            // 
-            this.cboRoleName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboRoleName.FormattingEnabled = true;
-            this.cboRoleName.Location = new System.Drawing.Point(172, 425);
-            this.cboRoleName.Name = "cboRoleName";
-            this.cboRoleName.Size = new System.Drawing.Size(192, 50);
-            this.cboRoleName.TabIndex = 16;
             // 
             // Column1
             // 
@@ -429,12 +422,52 @@
             this.CreateBy.ReadOnly = true;
             this.CreateBy.Width = 150;
             // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "RoleName";
+            this.Column9.MinimumWidth = 8;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 150;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.Location = new System.Drawing.Point(193, 102);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(398, 59);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(23, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 42);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Search By";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(429, 57);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Display User";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(2231, 785);
+            this.ClientSize = new System.Drawing.Size(1946, 1106);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -445,6 +478,7 @@
             this.Load += new System.EventHandler(this.RoleForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUser)).EndInit();
@@ -459,7 +493,6 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label txtRoleTitle;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Panel panel2;
@@ -478,6 +511,8 @@
         private System.Windows.Forms.RadioButton rTrue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboRoleName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -486,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreateBy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
